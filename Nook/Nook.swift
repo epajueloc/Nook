@@ -32,3 +32,15 @@ class NookController: NSObject, MKAnnotation {
     }
     
 }
+
+class NookViewController: UIViewController {
+    
+    static let sharedInstance = NookViewController()
+    
+    var nooks = [NookController(name:"Hesburgh Library - Fishbowl",coordinate:CLLocationCoordinate2D()),NookController(name:"Hesburgh Library - Reading Room",coordinate:CLLocationCoordinate2D()),NookController(name:"Math Library",coordinate:CLLocationCoordinate2D()), NookController(name:"LaFun - Computer Lab",coordinate:CLLocationCoordinate2D()), NookController(name:"Geddes Hall",coordinate:CLLocationCoordinate2D()), NookController(name:"Bond Hall",coordinate:CLLocationCoordinate2D()), NookController(name:"Coleman Morse Center - 1st Floor",coordinate:CLLocationCoordinate2D()),NookController(name:"Coleman Morse Center - 2nd Floor",coordinate:CLLocationCoordinate2D()),NookController(name:"DeBartolo Hall - Bean Bag Room",coordinate:CLLocationCoordinate2D())]
+    
+    var nooks2 = [NookController(name:"Hesburgh Library - Fishbowl",coordinate:CLLocationCoordinate2D()),NookController(name:"Hesburgh Library - Reading Room",coordinate:CLLocationCoordinate2D()),NookController(name:"Math Library",coordinate:CLLocationCoordinate2D()), NookController(name:"LaFun - Computer Lab",coordinate:CLLocationCoordinate2D())]
+    
+    var nooks3 = [NookController(name:"Hesburgh Library - Fishbowl",coordinate:CLLocationCoordinate2D()),NookController(name:"Hesburgh Library - Reading Room",coordinate:CLLocationCoordinate2D())]
+    
+}

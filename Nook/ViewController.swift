@@ -10,22 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    static let sharedInstance = ViewController()
+    var namePassed: String?
+    
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBAction func doneButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    static let sharedInstance = ViewController()
-    
-    var nooks = ["Hesburgh Library - Fishbowl","Hesburgh Library - Reading Room","Math Library","LaFun - Computer Lab", "Geddes Hall", "Bond Hall", "Coleman Morse Center - 1st Floor", "Coleman Morse Center - 2nd Floor","DeBartolo Hall - Bean Bag Room"]
-    
-    var nooks2 = ["Hesburgh Library - Fishbowl","Hesburgh Library - Readin1g Room","Math Library","LaFun - Computer Lab"]
-    
-    var nooks3 = ["Hesburgh Library - Fishbowl","Hesburgh Library - Reading Room"]
-    
-    func populate(name:String) {
-        nameLabel.text = name
+    override func viewWillAppear(_ animated: Bool) {
+        nameLabel.text = namePassed
     }
 
     override func viewDidLoad() {
@@ -34,7 +29,6 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 

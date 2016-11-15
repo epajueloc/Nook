@@ -9,6 +9,10 @@
 import UIKit
 
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var nameToPass:String!
+    
+    static let sharedInstance = TableViewController()
         
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var tableview2: UITableView!
@@ -40,15 +44,15 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         var count:Int?
         
         if tableView == self.tableview {
-            count = ViewController.sharedInstance.nooks.count
+            count = NookViewController.sharedInstance.nooks.count
         }
         
         if tableView == self.tableview2 {
-            count = ViewController.sharedInstance.nooks2.count
+            count = NookViewController.sharedInstance.nooks2.count
         }
         
         if tableView == self.tableview3 {
-            count = ViewController.sharedInstance.nooks3.count
+            count = NookViewController.sharedInstance.nooks3.count
         }
         
         return count!
@@ -60,32 +64,43 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         if tableView == self.tableview {
             cell = tableView.dequeueReusableCell(withIdentifier: "customcell1", for: indexPath)
-            cell!.textLabel?.text = ViewController.sharedInstance.nooks[indexPath.item]
+            cell!.textLabel?.text = NookViewController.sharedInstance.nooks[indexPath.row].name
         }
         
         if tableView == self.tableview2 {
             cell = tableView.dequeueReusableCell(withIdentifier: "customcell2", for: indexPath)
-            cell!.textLabel?.text = ViewController.sharedInstance.nooks[indexPath.item]
+            cell!.textLabel?.text = NookViewController.sharedInstance.nooks2[indexPath.row].name
         }
         
         if tableView == self.tableview3 {
             cell = tableView.dequeueReusableCell(withIdentifier: "customcell3", for: indexPath)
-            cell!.textLabel?.text = ViewController.sharedInstance.nooks[indexPath.item]
+            cell!.textLabel?.text = NookViewController.sharedInstance.nooks3[indexPath.row].name
         }
         return cell!
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "showView", sender: self)
         
-//        let selectedNook: String = ViewController.sharedInstance.nooks[indexPath.row].name
+        if tableView == self.tableview {
+            nameToPass = NookViewController.sharedInstance.nooks[indexPath.row].name
+        }
+        
+        if tableView == self.tableview2 {
+            nameToPass = NookViewController.sharedInstance.nooks2[indexPath.row].name
+        }
+        
+        if tableView == self.tableview3 {
+            nameToPass = NookViewController.sharedInstance.nooks3[indexPath.row].name
+        }
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let destinationViewController = segue.destination as? ViewController {
-            destinationViewController.viewDidLoad()
+            destinationViewController.namePassed = nameToPass
         }
         
     }
