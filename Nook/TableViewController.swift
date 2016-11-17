@@ -11,6 +11,7 @@ import UIKit
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var nameToPass:String!
+    var availabilityToPass:NookAvailability!
     
     static let sharedInstance = TableViewController()
         
@@ -85,14 +86,17 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         if tableView == self.tableview {
             nameToPass = NookViewController.sharedInstance.nooks[indexPath.row].name
+            availabilityToPass = NookViewController.sharedInstance.nooks[indexPath.row].availability
         }
         
         if tableView == self.tableview2 {
             nameToPass = NookViewController.sharedInstance.nooks2[indexPath.row].name
+            availabilityToPass = NookViewController.sharedInstance.nooks2[indexPath.row].availability
         }
         
         if tableView == self.tableview3 {
             nameToPass = NookViewController.sharedInstance.nooks3[indexPath.row].name
+            availabilityToPass = NookViewController.sharedInstance.nooks3[indexPath.row].availability
         }
         
     }
@@ -101,8 +105,15 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         if let destinationViewController = segue.destination as? ViewController {
             destinationViewController.namePassed = nameToPass
+            destinationViewController.availabilityPassed = availabilityToPass
         }
         
+    }
+    
+    enum NookAvailability {
+        case Red
+        case Yellow
+        case Green
     }
 
     override func viewDidLoad() {
