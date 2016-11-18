@@ -14,6 +14,7 @@
 		6A22030A1DC57945002A70F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2203081DC57945002A70F1 /* LaunchScreen.storyboard */; };
 		6A7AD74D1DD6D5F7001BFD1C /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7AD74C1DD6D5F7001BFD1C /* TableViewController.swift */; };
 		6A7AD7511DD7887C001BFD1C /* Nook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7AD7501DD7887C001BFD1C /* Nook.swift */; };
+		6ABB32461DDECE5400A9309D /* ProgressArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABB32451DDECE5400A9309D /* ProgressArc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6A22030B1DC57945002A70F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A7AD74C1DD6D5F7001BFD1C /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		6A7AD7501DD7887C001BFD1C /* Nook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nook.swift; sourceTree = "<group>"; };
+		6ABB32451DDECE5400A9309D /* ProgressArc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressArc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +60,41 @@
 		6A2202FE1DC57945002A70F1 /* Nook */ = {
 			isa = PBXGroup;
 			children = (
+				6ABB324A1DDF9D7700A9309D /* Model */,
+				6ABB32491DDF9D6E00A9309D /* Storyboard */,
+				6ABB32471DDF9D5900A9309D /* ViewController */,
 				6A2202FF1DC57945002A70F1 /* AppDelegate.swift */,
-				6A2203011DC57945002A70F1 /* ViewController.swift */,
-				6A7AD74C1DD6D5F7001BFD1C /* TableViewController.swift */,
-				6A7AD7501DD7887C001BFD1C /* Nook.swift */,
-				6A2203031DC57945002A70F1 /* Main.storyboard */,
 				6A2203061DC57945002A70F1 /* Assets.xcassets */,
 				6A2203081DC57945002A70F1 /* LaunchScreen.storyboard */,
 				6A22030B1DC57945002A70F1 /* Info.plist */,
+				6ABB32451DDECE5400A9309D /* ProgressArc.swift */,
 			);
 			path = Nook;
+			sourceTree = "<group>";
+		};
+		6ABB32471DDF9D5900A9309D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6A2203011DC57945002A70F1 /* ViewController.swift */,
+				6A7AD74C1DD6D5F7001BFD1C /* TableViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		6ABB32491DDF9D6E00A9309D /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				6A2203031DC57945002A70F1 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		6ABB324A1DDF9D7700A9309D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6A7AD7501DD7887C001BFD1C /* Nook.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +173,7 @@
 				6A2203021DC57945002A70F1 /* ViewController.swift in Sources */,
 				6A7AD74D1DD6D5F7001BFD1C /* TableViewController.swift in Sources */,
 				6A7AD7511DD7887C001BFD1C /* Nook.swift in Sources */,
+				6ABB32461DDECE5400A9309D /* ProgressArc.swift in Sources */,
 				6A2203001DC57945002A70F1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     var nameToPass:String!
     var availabilityToPass:NookAvailability!
+    var nooksRowAccessed:Int!
     
     static let sharedInstance = TableViewController()
         
@@ -47,12 +48,10 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         if tableView == self.tableview {
             count = NookViewController.sharedInstance.nooks.count
         }
-        
-        if tableView == self.tableview2 {
+        else if tableView == self.tableview2 {
             count = NookViewController.sharedInstance.nooks2.count
         }
-        
-        if tableView == self.tableview3 {
+        else {
             count = NookViewController.sharedInstance.nooks3.count
         }
         
@@ -66,14 +65,13 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         if tableView == self.tableview {
             cell = tableView.dequeueReusableCell(withIdentifier: "customcell1", for: indexPath)
             cell!.textLabel?.text = NookViewController.sharedInstance.nooks[indexPath.row].name
+            nooksRowAccessed = indexPath.row
         }
-        
-        if tableView == self.tableview2 {
+        else if tableView == self.tableview2 {
             cell = tableView.dequeueReusableCell(withIdentifier: "customcell2", for: indexPath)
             cell!.textLabel?.text = NookViewController.sharedInstance.nooks2[indexPath.row].name
         }
-        
-        if tableView == self.tableview3 {
+        else {
             cell = tableView.dequeueReusableCell(withIdentifier: "customcell3", for: indexPath)
             cell!.textLabel?.text = NookViewController.sharedInstance.nooks3[indexPath.row].name
         }
@@ -88,34 +86,23 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             nameToPass = NookViewController.sharedInstance.nooks[indexPath.row].name
             availabilityToPass = NookViewController.sharedInstance.nooks[indexPath.row].availability
         }
-        
-        if tableView == self.tableview2 {
+        else if tableView == self.tableview2 {
             nameToPass = NookViewController.sharedInstance.nooks2[indexPath.row].name
             availabilityToPass = NookViewController.sharedInstance.nooks2[indexPath.row].availability
         }
-        
-        if tableView == self.tableview3 {
+        else {
             nameToPass = NookViewController.sharedInstance.nooks3[indexPath.row].name
             availabilityToPass = NookViewController.sharedInstance.nooks3[indexPath.row].availability
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if let destinationViewController = segue.destination as? ViewController {
             destinationViewController.namePassed = nameToPass
             destinationViewController.availabilityPassed = availabilityToPass
         }
-        
     }
     
-    enum NookAvailability {
-        case Red
-        case Yellow
-        case Green
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -130,6 +117,9 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         tableview3.delegate = self
         tableview3.dataSource = self
+        
+        nooksRowAccessed = nil
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -143,7 +133,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }
