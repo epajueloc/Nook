@@ -12,7 +12,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     var nameToPass:String!
     var availabilityToPass:NookAvailability!
-    var nooksRowAccessed:Int!
     
     static let sharedInstance = TableViewController()
         
@@ -35,7 +34,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             tableview.isHidden = true
             tableview2.isHidden = true
             tableview3.isHidden = false
-            
         default:
             break
         }
@@ -65,7 +63,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         if tableView == self.tableview {
             cell = tableView.dequeueReusableCell(withIdentifier: "customcell1", for: indexPath)
             cell!.textLabel?.text = NookViewController.sharedInstance.nooks[indexPath.row].name
-            nooksRowAccessed = indexPath.row
         }
         else if tableView == self.tableview2 {
             cell = tableView.dequeueReusableCell(withIdentifier: "customcell2", for: indexPath)
@@ -76,12 +73,9 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             cell!.textLabel?.text = NookViewController.sharedInstance.nooks3[indexPath.row].name
         }
         return cell!
-
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showView", sender: self)
-        
         if tableView == self.tableview {
             nameToPass = NookViewController.sharedInstance.nooks[indexPath.row].name
             availabilityToPass = NookViewController.sharedInstance.nooks[indexPath.row].availability
@@ -94,6 +88,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             nameToPass = NookViewController.sharedInstance.nooks3[indexPath.row].name
             availabilityToPass = NookViewController.sharedInstance.nooks3[indexPath.row].availability
         }
+        self.performSegue(withIdentifier: "showView", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -118,14 +113,13 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableview3.delegate = self
         tableview3.dataSource = self
         
-        nooksRowAccessed = nil
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        self.navigationController?.isNavigationBarHidden = true
-        
         self.tableview.reloadData()
         self.tableview2.reloadData()
         self.tableview3.reloadData()
