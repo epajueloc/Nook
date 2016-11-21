@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreLocation
 
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var nameToPass:String!
+    var hoursToPass:String!
     var availabilityToPass:NookAvailability!
     
     static let sharedInstance = TableViewController()
@@ -78,14 +80,17 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == self.tableview {
             nameToPass = NookViewController.sharedInstance.nooks[indexPath.row].name
+            hoursToPass = NookViewController.sharedInstance.nooks[indexPath.row].hours
             availabilityToPass = NookViewController.sharedInstance.nooks[indexPath.row].availability
         }
         else if tableView == self.tableview2 {
             nameToPass = NookViewController.sharedInstance.nooks2[indexPath.row].name
+            hoursToPass = NookViewController.sharedInstance.nooks2[indexPath.row].hours
             availabilityToPass = NookViewController.sharedInstance.nooks2[indexPath.row].availability
         }
         else {
             nameToPass = NookViewController.sharedInstance.nooks3[indexPath.row].name
+            hoursToPass = NookViewController.sharedInstance.nooks3[indexPath.row].hours
             availabilityToPass = NookViewController.sharedInstance.nooks3[indexPath.row].availability
         }
         self.performSegue(withIdentifier: "showView", sender: self)
@@ -94,6 +99,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = segue.destination as? ViewController {
             destinationViewController.namePassed = nameToPass
+            destinationViewController.hoursPassed = hoursToPass
             destinationViewController.availabilityPassed = availabilityToPass
         }
     }

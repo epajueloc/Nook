@@ -13,17 +13,33 @@ class ViewController: UIViewController {
     static let sharedInstance = ViewController()
     
     var namePassed: String!
+    var hoursPassed: String!
     var availabilityPassed: NookAvailability!
     var availabilityToDisplay: String!
     var availabilityToUpdate: NookAvailability!
     
+    @IBOutlet weak var greenButton: UIButton!
+    @IBOutlet weak var yellowButton: UIButton!
+    @IBOutlet weak var redButton: UIButton!
+    
+    
     @IBOutlet weak var navigationBarTitle: UINavigationItem!
     @IBOutlet weak var availabilityLabel: UILabel!
     @IBOutlet weak var progressArc: KDCircularProgress!
+    @IBOutlet weak var hoursLabel: UILabel!
     
     @IBAction func greenButtonPressed(_ sender: Any) {
         updateAvailability(availability: NookAvailability.Green)
         progressArcAngle(availability: NookAvailability.Green)
+        
+        // Trying to add persistence but don't know how to only persist availability
+        
+//        let manager = FileManager.default
+//        let documents = manager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+//        let fileURL = documents.appendingPathComponent("file.txt")
+//        
+//        let availability = Nook(NSKeyedArchiver.archiveRootObject(rootObject: Any, toFile: String)
+        
     }
     
     @IBAction func yellowButtonPressed(_ sender: Any) {
@@ -75,12 +91,18 @@ class ViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         
         navigationBarTitle.title = namePassed
+        hoursLabel.text = hoursPassed
         updateAvailability(availability: availabilityPassed)
         progressArcAngle(availability: availabilityPassed)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        greenButton.layer.cornerRadius = 15
+        yellowButton.layer.cornerRadius = 15
+        redButton.layer.cornerRadius = 15
+        
     }
 
     override func didReceiveMemoryWarning() {
