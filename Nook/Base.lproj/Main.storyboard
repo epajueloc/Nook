@@ -59,7 +59,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JOa-fg-SVt" id="ndb-FY-8nm">
-                                            <rect key="frame" x="0.0" y="0.0" width="310" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -74,7 +74,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lUg-i8-qmF" id="Ey0-ts-Xz4">
-                                            <rect key="frame" x="0.0" y="0.0" width="310" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -88,7 +88,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="og4-Fk-23x" id="2VO-X8-kxn">
-                                            <rect key="frame" x="0.0" y="0.0" width="310" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -97,6 +97,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JRk-hX-RM6">
+                                <rect key="frame" x="16" y="74" width="343" height="583"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -104,21 +107,26 @@
                             <constraint firstAttribute="trailingMargin" secondItem="aFg-a4-rBE" secondAttribute="trailing" id="BAX-C1-2ms"/>
                             <constraint firstItem="dNC-82-a6W" firstAttribute="top" secondItem="aFg-a4-rBE" secondAttribute="bottom" constant="10" id="JWL-w0-Go6"/>
                             <constraint firstItem="gwI-aJ-N8t" firstAttribute="top" secondItem="vSI-96-4qD" secondAttribute="bottom" constant="10" id="L5C-8s-xbC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JRk-hX-RM6" secondAttribute="trailing" id="OxV-ae-6ak"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gwI-aJ-N8t" secondAttribute="trailing" id="SUw-Md-EZK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Zwu-oH-V3W" secondAttribute="trailing" id="Sa6-RS-DPS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="JRk-hX-RM6" secondAttribute="leading" id="THs-a7-m7W"/>
                             <constraint firstItem="vSI-96-4qD" firstAttribute="centerY" secondItem="1h2-yn-ikd" secondAttribute="centerY" multiplier="0.15" id="XZX-3q-EvU"/>
                             <constraint firstItem="dNC-82-a6W" firstAttribute="top" secondItem="gwI-aJ-N8t" secondAttribute="bottom" constant="10" id="aFe-NK-m7u"/>
+                            <constraint firstItem="dNC-82-a6W" firstAttribute="top" secondItem="JRk-hX-RM6" secondAttribute="bottom" constant="10" id="bc3-nr-3zk"/>
+                            <constraint firstItem="JRk-hX-RM6" firstAttribute="top" secondItem="vSI-96-4qD" secondAttribute="bottom" constant="10" id="dZp-st-XFe"/>
                             <constraint firstItem="Zwu-oH-V3W" firstAttribute="top" secondItem="vSI-96-4qD" secondAttribute="bottom" constant="10" id="ej3-kw-HlI"/>
                             <constraint firstItem="dNC-82-a6W" firstAttribute="top" secondItem="Zwu-oH-V3W" secondAttribute="bottom" constant="10" id="g2m-UD-Gj1"/>
+                            <constraint firstItem="aFg-a4-rBE" firstAttribute="top" secondItem="vSI-96-4qD" secondAttribute="bottom" constant="10" id="idT-hk-BN6"/>
                             <constraint firstItem="vSI-96-4qD" firstAttribute="width" secondItem="1h2-yn-ikd" secondAttribute="width" multiplier="0.8" id="pUH-ub-bjV"/>
                             <constraint firstItem="gwI-aJ-N8t" firstAttribute="leading" secondItem="1h2-yn-ikd" secondAttribute="leadingMargin" id="vHW-M2-ohy"/>
-                            <constraint firstItem="aFg-a4-rBE" firstAttribute="top" secondItem="vSI-96-4qD" secondAttribute="bottom" constant="10" id="wXY-0S-caY"/>
                             <constraint firstItem="vSI-96-4qD" firstAttribute="centerX" secondItem="1h2-yn-ikd" secondAttribute="centerX" id="wn9-aI-TlE"/>
                             <constraint firstItem="Zwu-oH-V3W" firstAttribute="leading" secondItem="1h2-yn-ikd" secondAttribute="leadingMargin" id="yTN-sL-1yY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nBZ-39-PZd"/>
                     <connections>
+                        <outlet property="mapview" destination="JRk-hX-RM6" id="gtL-Uy-zgb"/>
                         <outlet property="segmentedControl" destination="vSI-96-4qD" id="lr6-jo-Zxa"/>
                         <outlet property="tableview" destination="gwI-aJ-N8t" id="e4v-dV-98Q"/>
                         <outlet property="tableview2" destination="Zwu-oH-V3W" id="tiV-Lp-Rpw"/>
@@ -235,7 +243,13 @@
                             <constraint firstItem="p1w-nD-5aG" firstAttribute="top" secondItem="Kb8-Js-7gd" secondAttribute="bottom" constant="80" id="wCe-Ls-BrG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Name" id="HTQ-J6-1dM"/>
+                    <navigationItem key="navigationItem" title="Name" id="HTQ-J6-1dM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dim-sy-Biq">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="kL1-bp-4Vy" id="TF5-xO-hC9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="availabilityLabel" destination="WUv-Mi-1m8" id="Xux-NC-BzF"/>
                         <outlet property="greenButton" destination="AyC-k9-GjB" id="Qwb-vL-zLP"/>
@@ -243,6 +257,7 @@
                         <outlet property="navigationBarTitle" destination="HTQ-J6-1dM" id="RpY-Ce-Peu"/>
                         <outlet property="progressArc" destination="Kb8-Js-7gd" id="2UO-Tx-cNy"/>
                         <outlet property="redButton" destination="p1w-nD-5aG" id="NHS-tX-rHt"/>
+                        <outlet property="rightBarButton" destination="dim-sy-Biq" id="2H7-9E-DoU"/>
                         <outlet property="yellowButton" destination="yAB-8K-SEZ" id="xvI-mN-HE9"/>
                     </connections>
                 </viewController>

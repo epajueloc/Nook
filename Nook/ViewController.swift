@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class ViewController: UIViewController {
     
@@ -15,12 +16,14 @@ class ViewController: UIViewController {
     var namePassed: String!
     var hoursPassed: String!
     var availabilityPassed: NookAvailability!
+    var idPassed: Int!
     var availabilityToDisplay: String!
     var availabilityToUpdate: NookAvailability!
     
     @IBOutlet weak var greenButton: UIButton!
     @IBOutlet weak var yellowButton: UIButton!
     @IBOutlet weak var redButton: UIButton!
+    @IBOutlet weak var rightBarButton: UIBarButtonItem!
     
     
     @IBOutlet weak var navigationBarTitle: UINavigationItem!
@@ -28,17 +31,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var progressArc: KDCircularProgress!
     @IBOutlet weak var hoursLabel: UILabel!
     
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        if checkDuplicates() == false {
+            addToFavorites()
+        }
+        else {
+            // Add alert saying that it's already in your favorites
+            print("Error message")
+        }
+    }
+    
     @IBAction func greenButtonPressed(_ sender: Any) {
         updateAvailability(availability: NookAvailability.Green)
         progressArcAngle(availability: NookAvailability.Green)
-        
-        // Trying to add persistence but don't know how to only persist availability
-        
-//        let manager = FileManager.default
-//        let documents = manager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-//        let fileURL = documents.appendingPathComponent("file.txt")
-//        
-//        let availability = Nook(NSKeyedArchiver.archiveRootObject(rootObject: Any, toFile: String)
+
+        // Add persistence here (store availability for specific nook)
         
     }
     
@@ -84,6 +91,23 @@ class ViewController: UIViewController {
         }
         else {
             progressArc.angle = 0
+        }
+    }
+    
+    func addToFavorites() {
+        NookViewController.sharedInstance.favoriteNooks.append(NookController(name:namePassed,coordinate:CLLocationCoordinate2D(),availability:availabilityPassed,hours:hoursPassed, id:idPassed))
+    }
+    
+    func removeFromFavorites() {
+        NookViewController.sharedInstance.favoriteNooks = NookViewController.sharedInstance.favoriteNooks.filter() { $0 !== NookController(name: namePassed, coordinate: CLLocationCoordinate2D(), availability: availabilityPassed, hours: hoursPassed, id:idPassed) }
+    }
+    
+    // This function is not working properly - always returning false
+    func checkDuplicates() -> Bool {
+        if NookViewController.sharedInstance.favoriteNooks.contains(NookController(name: namePassed, coordinate: CLLocationCoordinate2D(), availability: availabilityPassed, hours: hoursPassed, id: idPassed)) {
+            return true
+            } else {
+            return false
         }
     }
     
