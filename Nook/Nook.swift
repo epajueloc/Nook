@@ -31,13 +31,18 @@ class NookController: NSObject, MKAnnotation {
         self.hours = hours
         self.id = id
     }
-        
+    
+    
+    // Check the values after "??"
     required init?(coder aDecoder: NSCoder) {
-        name = (aDecoder.decodeObject(forKey: "name") as? String) ?? ""
-        coordinate = CLLocationCoordinate2D(latitude: aDecoder.decodeObject(forKey: "latitude") as? CLLocationDegrees ?? CLLocationDegrees(), longitude: aDecoder.decodeObject(forKey: "longitude") as? CLLocationDegrees ?? CLLocationDegrees())
-        availability = (aDecoder.decodeObject(forKey: "availability") as? NookAvailability) ?? .Empty
-        hours = (aDecoder.decodeObject(forKey: "hours") as? String) ?? ""
-        id = (aDecoder.decodeObject(forKey: "id") as? Int) ?? 0
+        name = aDecoder.decodeObject(forKey: "name") as? String ?? ""
+        coordinate = CLLocationCoordinate2D(
+            latitude: aDecoder.decodeObject(forKey: "latitude") as? CLLocationDegrees ?? 0,
+            longitude: aDecoder.decodeObject(forKey: "longitude") as? CLLocationDegrees ?? 0
+        )
+        availability = aDecoder.decodeObject(forKey: "availability") as? NookAvailability ?? .Empty
+        hours = aDecoder.decodeObject(forKey: "hours") as? String ?? ""
+        id = aDecoder.decodeObject(forKey: "id") as? Int ?? Int()
     }
     
     func encode(with aCoder: NSCoder) {

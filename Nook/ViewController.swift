@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var hoursPassed: String!
     var availabilityPassed: NookAvailability!
     var idPassed: Int!
+    var coordinatePassed: CLLocationCoordinate2D!
     var availabilityToDisplay: String!
     var availabilityToUpdate: NookAvailability!
     
@@ -96,10 +97,35 @@ class ViewController: UIViewController {
     
     func addToFavorites() {
         NookViewController.sharedInstance.favoriteNooks.append(NookController(name:namePassed,coordinate:CLLocationCoordinate2D(),availability:availabilityPassed,hours:hoursPassed, id:idPassed))
+        
+        // Persistence below is not letting the function addtoFavorites run
+        
+        // Persistence
+//        let defaults = UserDefaults.standard
+//        defaults.set(namePassed, forKey: "name")
+//        defaults.set(coordinatePassed.latitude, forKey: "latitude")
+//        defaults.set(coordinatePassed.longitude, forKey: "longitude")
+//        defaults.set(availabilityPassed, forKey: "availability")
+//        defaults.set(hoursPassed, forKey: "hours")
+//        defaults.set(idPassed, forKey: "id")
+        
+        
     }
     
     func removeFromFavorites() {
         NookViewController.sharedInstance.favoriteNooks = NookViewController.sharedInstance.favoriteNooks.filter() { $0 !== NookController(name: namePassed, coordinate: CLLocationCoordinate2D(), availability: availabilityPassed, hours: hoursPassed, id:idPassed) }
+        
+        
+        // Is this right?
+        let defaults = UserDefaults.standard
+        defaults.set(namePassed, forKey: "name")
+        defaults.set(coordinatePassed.latitude, forKey: "latitude")
+        defaults.set(coordinatePassed.longitude, forKey: "longitude")
+        defaults.set(availabilityPassed, forKey: "availability")
+        defaults.set(hoursPassed, forKey: "hours")
+        defaults.set(idPassed, forKey: "id")
+        defaults.synchronize()
+        
     }
     
     // This function is not working properly - always returning false

@@ -16,6 +16,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     var hoursToPass:String!
     var availabilityToPass:NookAvailability!
     var idToPass:Int!
+    var coordinateToPass: CLLocationCoordinate2D!
     
     let locationManager = CLLocationManager()
     var authorized = false
@@ -100,31 +101,35 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     // When a row is tapped, store in variables the properties of nook
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let entry1 = NookViewController.sharedInstance.favoriteNooks[indexPath.row]
-        let entry2 = NookViewController.sharedInstance.nooks[indexPath.row]
-        let entry3 = NookViewController.sharedInstance.nooks[indexPath.row]
+//        let entry1 = NookViewController.sharedInstance.favoriteNooks[indexPath.row]
+//        let entry2 = NookViewController.sharedInstance.nooks[indexPath.row]
+//        let entry3 = NookViewController.sharedInstance.nooks[indexPath.row]
         
         if tableView == self.tableview {
-            nameToPass = entry1.name
-            hoursToPass = entry1.hours
-            availabilityToPass = entry1.availability
-            idToPass = entry1.id
+            nameToPass = NookViewController.sharedInstance.favoriteNooks[indexPath.row].name
+            hoursToPass = NookViewController.sharedInstance.favoriteNooks[indexPath.row].hours
+            availabilityToPass = NookViewController.sharedInstance.favoriteNooks[indexPath.row].availability
+            idToPass = NookViewController.sharedInstance.favoriteNooks[indexPath.row].id
+            coordinateToPass = NookViewController.sharedInstance.favoriteNooks[indexPath.row].coordinate
         }
         else if tableView == self.tableview2 {
-            nameToPass = entry2.name
-            hoursToPass = entry2.hours
-            availabilityToPass = entry2.availability
-            idToPass = entry2.id
+            nameToPass = NookViewController.sharedInstance.nooks[indexPath.row].name
+            hoursToPass = NookViewController.sharedInstance.nooks[indexPath.row].hours
+            availabilityToPass = NookViewController.sharedInstance.nooks[indexPath.row].availability
+            idToPass = NookViewController.sharedInstance.nooks[indexPath.row].id
+            coordinateToPass = NookViewController.sharedInstance.nooks[indexPath.row].coordinate
         }
         else {
-            nameToPass = entry3.name
-            hoursToPass = entry3.hours
-            availabilityToPass = entry3.availability
-            idToPass = entry3.id
+            nameToPass = NookViewController.sharedInstance.nooks[indexPath.row].name
+            hoursToPass = NookViewController.sharedInstance.nooks[indexPath.row].hours
+            availabilityToPass = NookViewController.sharedInstance.nooks[indexPath.row].availability
+            idToPass = NookViewController.sharedInstance.nooks[indexPath.row].id
+            coordinateToPass = NookViewController.sharedInstance.nooks[indexPath.row].coordinate
             
             // When a row is tapped, pan the map to its matching annotation.
-            mapview.setCenter(entry2.coordinate, animated: true)
-            mapview.selectAnnotation(entry2, animated: true)
+            // Center only for entry 2 - check this
+            mapview.setCenter(NookViewController.sharedInstance.nooks[indexPath.row].coordinate, animated: true)
+            mapview.selectAnnotation(NookViewController.sharedInstance.nooks[indexPath.row], animated: true)
             tableView.deselectRow(at: indexPath, animated: true)
         }
         self.performSegue(withIdentifier: "showView", sender: self)
@@ -149,6 +154,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             destinationViewController.hoursPassed = hoursToPass
             destinationViewController.availabilityPassed = availabilityToPass
             destinationViewController.idPassed = idToPass
+            destinationViewController.coordinatePassed = coordinateToPass
         }
     }
     
@@ -199,6 +205,8 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         return annotationView
         
     }
+    
+    // MARK: Initial view
     
     override func viewDidLoad() {
         super.viewDidLoad()
