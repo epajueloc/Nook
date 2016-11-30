@@ -47,19 +47,20 @@
                                     <segment title="Search"/>
                                     <segment title="Nearby"/>
                                 </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="segmentChanged:" destination="3Xp-n0-j0J" eventType="valueChanged" id="wzg-Rp-oMD"/>
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gwI-aJ-N8t" userLabel="Tableview1">
-                                <rect key="frame" x="16" y="74" width="343" height="583"/>
+                                <rect key="frame" x="-4" y="74" width="383" height="593"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="customcell1" id="JOa-fg-SVt">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="383" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JOa-fg-SVt" id="ndb-FY-8nm">
-                                            <rect key="frame" x="0.0" y="0.0" width="310" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -67,28 +68,28 @@
                                 <sections/>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zwu-oH-V3W" userLabel="Tableview2">
-                                <rect key="frame" x="16" y="74" width="343" height="583"/>
+                                <rect key="frame" x="-4" y="74" width="383" height="593"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="customcell2" id="lUg-i8-qmF">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="383" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lUg-i8-qmF" id="Ey0-ts-Xz4">
-                                            <rect key="frame" x="0.0" y="0.0" width="310" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aFg-a4-rBE">
-                                <rect key="frame" x="16" y="74" width="343" height="583"/>
+                                <rect key="frame" x="-4" y="467" width="383" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="customcell3" id="og4-Fk-23x">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="383" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="og4-Fk-23x" id="2VO-X8-kxn">
-                                            <rect key="frame" x="0.0" y="0.0" width="310" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -98,30 +99,30 @@
                                 </prototypes>
                             </tableView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JRk-hX-RM6">
-                                <rect key="frame" x="16" y="74" width="343" height="583"/>
+                                <rect key="frame" x="-4" y="74" width="383" height="393"/>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.1080800849" green="0.31864141629999998" blue="0.54308894230000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="aFg-a4-rBE" secondAttribute="leading" id="7Sw-j5-LvG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aFg-a4-rBE" secondAttribute="trailing" id="BAX-C1-2ms"/>
-                            <constraint firstItem="dNC-82-a6W" firstAttribute="top" secondItem="aFg-a4-rBE" secondAttribute="bottom" constant="10" id="JWL-w0-Go6"/>
+                            <constraint firstItem="aFg-a4-rBE" firstAttribute="top" secondItem="JRk-hX-RM6" secondAttribute="bottom" id="3om-Xx-oXt"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="aFg-a4-rBE" secondAttribute="leading" constant="20" id="7Sw-j5-LvG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aFg-a4-rBE" secondAttribute="trailing" constant="-20" id="BAX-C1-2ms"/>
+                            <constraint firstItem="dNC-82-a6W" firstAttribute="top" secondItem="aFg-a4-rBE" secondAttribute="bottom" id="JWL-w0-Go6"/>
                             <constraint firstItem="gwI-aJ-N8t" firstAttribute="top" secondItem="vSI-96-4qD" secondAttribute="bottom" constant="10" id="L5C-8s-xbC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JRk-hX-RM6" secondAttribute="trailing" id="OxV-ae-6ak"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gwI-aJ-N8t" secondAttribute="trailing" id="SUw-Md-EZK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Zwu-oH-V3W" secondAttribute="trailing" id="Sa6-RS-DPS"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="JRk-hX-RM6" secondAttribute="leading" id="THs-a7-m7W"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JRk-hX-RM6" secondAttribute="trailing" constant="-20" id="OxV-ae-6ak"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gwI-aJ-N8t" secondAttribute="trailing" constant="-20" id="SUw-Md-EZK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zwu-oH-V3W" secondAttribute="trailing" constant="-20" id="Sa6-RS-DPS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="JRk-hX-RM6" secondAttribute="leading" constant="20" id="THs-a7-m7W"/>
                             <constraint firstItem="vSI-96-4qD" firstAttribute="centerY" secondItem="1h2-yn-ikd" secondAttribute="centerY" multiplier="0.15" id="XZX-3q-EvU"/>
-                            <constraint firstItem="dNC-82-a6W" firstAttribute="top" secondItem="gwI-aJ-N8t" secondAttribute="bottom" constant="10" id="aFe-NK-m7u"/>
-                            <constraint firstItem="dNC-82-a6W" firstAttribute="top" secondItem="JRk-hX-RM6" secondAttribute="bottom" constant="10" id="bc3-nr-3zk"/>
+                            <constraint firstItem="dNC-82-a6W" firstAttribute="top" secondItem="gwI-aJ-N8t" secondAttribute="bottom" id="aFe-NK-m7u"/>
+                            <constraint firstItem="dNC-82-a6W" firstAttribute="top" secondItem="JRk-hX-RM6" secondAttribute="bottom" constant="200" id="bc3-nr-3zk"/>
                             <constraint firstItem="JRk-hX-RM6" firstAttribute="top" secondItem="vSI-96-4qD" secondAttribute="bottom" constant="10" id="dZp-st-XFe"/>
                             <constraint firstItem="Zwu-oH-V3W" firstAttribute="top" secondItem="vSI-96-4qD" secondAttribute="bottom" constant="10" id="ej3-kw-HlI"/>
-                            <constraint firstItem="dNC-82-a6W" firstAttribute="top" secondItem="Zwu-oH-V3W" secondAttribute="bottom" constant="10" id="g2m-UD-Gj1"/>
-                            <constraint firstItem="aFg-a4-rBE" firstAttribute="top" secondItem="vSI-96-4qD" secondAttribute="bottom" constant="10" id="idT-hk-BN6"/>
+                            <constraint firstItem="dNC-82-a6W" firstAttribute="top" secondItem="Zwu-oH-V3W" secondAttribute="bottom" id="g2m-UD-Gj1"/>
                             <constraint firstItem="vSI-96-4qD" firstAttribute="width" secondItem="1h2-yn-ikd" secondAttribute="width" multiplier="0.8" id="pUH-ub-bjV"/>
-                            <constraint firstItem="gwI-aJ-N8t" firstAttribute="leading" secondItem="1h2-yn-ikd" secondAttribute="leadingMargin" id="vHW-M2-ohy"/>
+                            <constraint firstItem="gwI-aJ-N8t" firstAttribute="leading" secondItem="1h2-yn-ikd" secondAttribute="leadingMargin" constant="-20" id="vHW-M2-ohy"/>
                             <constraint firstItem="vSI-96-4qD" firstAttribute="centerX" secondItem="1h2-yn-ikd" secondAttribute="centerX" id="wn9-aI-TlE"/>
-                            <constraint firstItem="Zwu-oH-V3W" firstAttribute="leading" secondItem="1h2-yn-ikd" secondAttribute="leadingMargin" id="yTN-sL-1yY"/>
+                            <constraint firstItem="Zwu-oH-V3W" firstAttribute="leading" secondItem="1h2-yn-ikd" secondAttribute="leadingMargin" constant="-20" id="yTN-sL-1yY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nBZ-39-PZd"/>

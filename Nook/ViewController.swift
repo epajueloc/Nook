@@ -13,13 +13,15 @@ class ViewController: UIViewController {
     
     static let sharedInstance = ViewController()
     
-    var namePassed: String!
+    var titlePassed: String!
     var hoursPassed: String!
     var availabilityPassed: NookAvailability!
     var idPassed: Int!
     var coordinatePassed: CLLocationCoordinate2D!
     var availabilityToDisplay: String!
     var availabilityToUpdate: NookAvailability!
+    var currentNook: NookController?
+    var duplicateBool:Bool!
     
     @IBOutlet weak var greenButton: UIButton!
     @IBOutlet weak var yellowButton: UIButton!
@@ -33,7 +35,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var hoursLabel: UILabel!
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        if checkDuplicates() == false {
+        if checkDuplicates(titlePassed, coordinate: coordinatePassed, availability: availabilityPassed, hours: hoursPassed, id: idPassed) == false {
             addToFavorites()
         }
         else {
@@ -96,13 +98,13 @@ class ViewController: UIViewController {
     }
     
     func addToFavorites() {
-        NookViewController.sharedInstance.favoriteNooks.append(NookController(name:namePassed,coordinate:CLLocationCoordinate2D(),availability:availabilityPassed,hours:hoursPassed, id:idPassed))
+        NookViewController.sharedInstance.favoriteNooks.append(NookController(title:titlePassed,coordinate:CLLocationCoordinate2D(),availability:availabilityPassed,hours:hoursPassed, id:idPassed))
         
         // Persistence below is not letting the function addtoFavorites run
         
         // Persistence
 //        let defaults = UserDefaults.standard
-//        defaults.set(namePassed, forKey: "name")
+//        defaults.set(titlePassed, forKey: "title")
 //        defaults.set(coordinatePassed.latitude, forKey: "latitude")
 //        defaults.set(coordinatePassed.longitude, forKey: "longitude")
 //        defaults.set(availabilityPassed, forKey: "availability")
@@ -112,35 +114,58 @@ class ViewController: UIViewController {
         
     }
     
-    func removeFromFavorites() {
-        NookViewController.sharedInstance.favoriteNooks = NookViewController.sharedInstance.favoriteNooks.filter() { $0 !== NookController(name: namePassed, coordinate: CLLocationCoordinate2D(), availability: availabilityPassed, hours: hoursPassed, id:idPassed) }
+    func removeFromFavorites(_ title:String, coordinate:CLLocationCoordinate2D, availability:NookAvailability, hours:String, id:Int) {
+        
+//        NookViewController.sharedInstance.favoriteNooks = NookViewController.sharedInstance.favoriteNooks.filter() { $0 !== NookController(title: titlePassed, coordinate: CLLocationCoordinate2D(), availability: availabilityPassed, hours: hoursPassed, id:idPassed) }
+        
+        // Need to change this remove function
+        
+        for nook in NookViewController.sharedInstance.favoriteNooks {
+            if nook.title == title && nook.availability == availability && nook.hours == hours && nook.id == id {
+                print("Nook has been deleted from your favorites")
+                NookViewController.sharedInstance.favoriteNooks.removeFirst()
+            }
+        }
         
         
-        // Is this right?
-        let defaults = UserDefaults.standard
-        defaults.set(namePassed, forKey: "name")
-        defaults.set(coordinatePassed.latitude, forKey: "latitude")
-        defaults.set(coordinatePassed.longitude, forKey: "longitude")
-        defaults.set(availabilityPassed, forKey: "availability")
-        defaults.set(hoursPassed, forKey: "hours")
-        defaults.set(idPassed, forKey: "id")
-        defaults.synchronize()
+        // Is this right? Nope - should not be set
+//        let defaults = UserDefaults.standard
+//        defaults.set(titlePassed, forKey: "title")
+//        defaults.set(coordinatePassed.latitude, forKey: "latitude")
+//        defaults.set(coordinatePassed.longitude, forKey: "longitude")
+//        defaults.set(availabilityPassed, forKey: "availability")
+//        defaults.set(hoursPassed, forKey: "hours")
+//        defaults.set(idPassed, forKey: "id")
+//        defaults.synchronize()
         
     }
     
-    // This function is not working properly - always returning false
-    func checkDuplicates() -> Bool {
-        if NookViewController.sharedInstance.favoriteNooks.contains(NookController(name: namePassed, coordinate: CLLocationCoordinate2D(), availability: availabilityPassed, hours: hoursPassed, id: idPassed)) {
-            return true
+    func checkDuplicates(_ title:String, coordinate:CLLocationCoordinate2D, availability:NookAvailability, hours:String, id:Int) -> Bool {
+        
+        currentNook = NookController(title:titlePassed, coordinate:coordinatePassed, availability:availabilityPassed, hours:hoursPassed, id:idPassed)
+        
+        // not currently checking for coordinate equality
+        for nook in NookViewController.sharedInstance.favoriteNooks {
+            if nook.title == title && nook.availability == availability && nook.hours == hours && nook.id == id {
+                print("This nook is already in your favorites")
+                
+                let errorAlert = UIAlertController(title: "Error", message: "This nook is already in your favorites", preferredStyle: UIAlertControllerStyle.alert)
+                let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in })
+                errorAlert.addAction(dismissErrorAlert)
+                self.present(errorAlert, animated: true, completion: nil)
+                
+                duplicateBool = true
             } else {
-            return false
+                duplicateBool = false
+            }
         }
+       return duplicateBool
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
         
-        navigationBarTitle.title = namePassed
+        navigationBarTitle.title = titlePassed
         hoursLabel.text = hoursPassed
         updateAvailability(availability: availabilityPassed)
         progressArcAngle(availability: availabilityPassed)

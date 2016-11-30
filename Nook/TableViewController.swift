@@ -10,9 +10,9 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
+class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDelegate,UITableViewDataSource, CLLocationManagerDelegate {
     
-    var nameToPass:String!
+    var titleToPass:String!
     var hoursToPass:String!
     var availabilityToPass:NookAvailability!
     var idToPass:Int!
@@ -49,7 +49,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         //If we don't use tableview3, get rid of it
             tableview.isHidden = true
             tableview2.isHidden = true
-            tableview3.isHidden = true
+            tableview3.isHidden = false
             mapview.isHidden = false
         default:
             break
@@ -82,16 +82,16 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         if tableView == self.tableview {
             cell = tableView.dequeueReusableCell(withIdentifier: "customcell1", for: indexPath)
-            cell!.textLabel?.text = NookViewController.sharedInstance.favoriteNooks[indexPath.row].name
+            cell!.textLabel?.text = NookViewController.sharedInstance.favoriteNooks[indexPath.row].title
             
         }
         else if tableView == self.tableview2 {
             cell = tableView.dequeueReusableCell(withIdentifier: "customcell2", for: indexPath)
-            cell!.textLabel?.text = NookViewController.sharedInstance.nooks[indexPath.row].name
+            cell!.textLabel?.text = NookViewController.sharedInstance.nooks[indexPath.row].title
         }
         else {
             cell = tableView.dequeueReusableCell(withIdentifier: "customcell3", for: indexPath)
-            cell!.textLabel?.text = NookViewController.sharedInstance.nooks[indexPath.row].name
+            cell!.textLabel?.text = NookViewController.sharedInstance.nooks[indexPath.row].title
         }
         return cell!
     }
@@ -106,21 +106,21 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
 //        let entry3 = NookViewController.sharedInstance.nooks[indexPath.row]
         
         if tableView == self.tableview {
-            nameToPass = NookViewController.sharedInstance.favoriteNooks[indexPath.row].name
+            titleToPass = NookViewController.sharedInstance.favoriteNooks[indexPath.row].title
             hoursToPass = NookViewController.sharedInstance.favoriteNooks[indexPath.row].hours
             availabilityToPass = NookViewController.sharedInstance.favoriteNooks[indexPath.row].availability
             idToPass = NookViewController.sharedInstance.favoriteNooks[indexPath.row].id
             coordinateToPass = NookViewController.sharedInstance.favoriteNooks[indexPath.row].coordinate
         }
         else if tableView == self.tableview2 {
-            nameToPass = NookViewController.sharedInstance.nooks[indexPath.row].name
+            titleToPass = NookViewController.sharedInstance.nooks[indexPath.row].title
             hoursToPass = NookViewController.sharedInstance.nooks[indexPath.row].hours
             availabilityToPass = NookViewController.sharedInstance.nooks[indexPath.row].availability
             idToPass = NookViewController.sharedInstance.nooks[indexPath.row].id
             coordinateToPass = NookViewController.sharedInstance.nooks[indexPath.row].coordinate
         }
         else {
-            nameToPass = NookViewController.sharedInstance.nooks[indexPath.row].name
+            titleToPass = NookViewController.sharedInstance.nooks[indexPath.row].title
             hoursToPass = NookViewController.sharedInstance.nooks[indexPath.row].hours
             availabilityToPass = NookViewController.sharedInstance.nooks[indexPath.row].availability
             idToPass = NookViewController.sharedInstance.nooks[indexPath.row].id
@@ -150,7 +150,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = segue.destination as? ViewController {
-            destinationViewController.namePassed = nameToPass
+            destinationViewController.titlePassed = titleToPass
             destinationViewController.hoursPassed = hoursToPass
             destinationViewController.availabilityPassed = availabilityToPass
             destinationViewController.idPassed = idToPass
@@ -176,6 +176,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     // MARK: Map View Delegate
     
+    
     // Create red pin annotations for our nooks, and enable callouts
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
@@ -192,15 +193,11 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         if (annotationView == nil) {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView?.pinTintColor = UIColor.red
-//            annotationView!.canShowCallout = true
-//            let leftLabel = UILabel(frame: CGRect(x:0,y:0,width:100,height:30))
-//            leftLabel.textColor = UIColor.black
-//            leftLabel.backgroundColor = UIColor.blue
-//            annotationView!.leftCalloutAccessoryView = leftLabel
+         
+            // Callouts
+            annotationView!.canShowCallout = true
         }
         
-//        let label = annotationView!.leftCalloutAccessoryView as! UILabel
-//        label.text = annotation.title!
         annotationView!.annotation = annotation
         return annotationView
         
