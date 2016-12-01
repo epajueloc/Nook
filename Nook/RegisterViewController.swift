@@ -18,6 +18,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var backgroundBox: UIView!
     
     // MARK: IBActions
     @IBAction func registerButtonTapped(_ sender: Any) {
@@ -59,8 +60,7 @@ class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        backgroundBox.layer.cornerRadius = 10
     }
 
     override func didReceiveMemoryWarning() {
