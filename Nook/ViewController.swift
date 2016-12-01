@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     var availabilityPassed: NookAvailability!
     var idPassed: Int!
     var coordinatePassed: CLLocationCoordinate2D!
+    var distancePassed: Double!
     var availabilityToDisplay: String!
     var availabilityToUpdate: NookAvailability!
     var currentNook: NookController?
@@ -39,8 +40,10 @@ class ViewController: UIViewController {
             addToFavorites()
         }
         else {
-            // Add alert saying that it's already in your favorites
-            print("Error message")
+            let errorAlert = UIAlertController(title: "Error", message: "This nook is already in your favorites", preferredStyle: UIAlertControllerStyle.alert)
+            let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in })
+            errorAlert.addAction(dismissErrorAlert)
+            self.present(errorAlert, animated: true, completion: nil)
         }
     }
     
@@ -98,7 +101,7 @@ class ViewController: UIViewController {
     }
     
     func addToFavorites() {
-        NookViewController.sharedInstance.favoriteNooks.append(NookController(title:titlePassed,coordinate:CLLocationCoordinate2D(),availability:availabilityPassed,hours:hoursPassed, id:idPassed))
+        NookViewController.sharedInstance.favoriteNooks.append(NookController(title:titlePassed,coordinate:CLLocationCoordinate2D(),availability:availabilityPassed,hours:hoursPassed, id:idPassed, distance:distancePassed))
         
         // Persistence below is not letting the function addtoFavorites run
         
@@ -142,18 +145,11 @@ class ViewController: UIViewController {
     
     func checkDuplicates(_ title:String, coordinate:CLLocationCoordinate2D, availability:NookAvailability, hours:String, id:Int) -> Bool {
         
-        currentNook = NookController(title:titlePassed, coordinate:coordinatePassed, availability:availabilityPassed, hours:hoursPassed, id:idPassed)
+        currentNook = NookController(title:titlePassed, coordinate:coordinatePassed, availability:availabilityPassed, hours:hoursPassed, id:idPassed, distance:distancePassed)
         
-        // not currently checking for coordinate equality
+        // Note: not currently checking for coordinate equality or distance
         for nook in NookViewController.sharedInstance.favoriteNooks {
             if nook.title == title && nook.availability == availability && nook.hours == hours && nook.id == id {
-                print("This nook is already in your favorites")
-                
-                let errorAlert = UIAlertController(title: "Error", message: "This nook is already in your favorites", preferredStyle: UIAlertControllerStyle.alert)
-                let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in })
-                errorAlert.addAction(dismissErrorAlert)
-                self.present(errorAlert, animated: true, completion: nil)
-                
                 duplicateBool = true
             } else {
                 duplicateBool = false

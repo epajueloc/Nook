@@ -60,7 +60,7 @@
                                         <rect key="frame" x="0.0" y="28" width="383" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JOa-fg-SVt" id="ndb-FY-8nm">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -75,7 +75,7 @@
                                         <rect key="frame" x="0.0" y="28" width="383" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lUg-i8-qmF" id="Ey0-ts-Xz4">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -101,18 +101,36 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JRk-hX-RM6">
                                 <rect key="frame" x="-4" y="74" width="383" height="393"/>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WR9-HM-yHH">
+                                <rect key="frame" x="-4" y="467" width="383" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no Nooks super close to where you are!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZa-95-rTP">
+                                        <rect key="frame" x="1" y="90" width="380" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="EZa-95-rTP" firstAttribute="centerX" secondItem="WR9-HM-yHH" secondAttribute="centerX" id="KaO-c0-68E"/>
+                                    <constraint firstItem="EZa-95-rTP" firstAttribute="centerY" secondItem="WR9-HM-yHH" secondAttribute="centerY" id="zbI-Ct-SUq"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1080800849" green="0.31864141629999998" blue="0.54308894230000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="aFg-a4-rBE" firstAttribute="top" secondItem="JRk-hX-RM6" secondAttribute="bottom" id="3om-Xx-oXt"/>
                             <constraint firstAttribute="leadingMargin" secondItem="aFg-a4-rBE" secondAttribute="leading" constant="20" id="7Sw-j5-LvG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aFg-a4-rBE" secondAttribute="trailing" constant="-20" id="BAX-C1-2ms"/>
+                            <constraint firstItem="WR9-HM-yHH" firstAttribute="top" secondItem="JRk-hX-RM6" secondAttribute="bottom" id="BTL-Zf-Fxb"/>
                             <constraint firstItem="dNC-82-a6W" firstAttribute="top" secondItem="aFg-a4-rBE" secondAttribute="bottom" id="JWL-w0-Go6"/>
                             <constraint firstItem="gwI-aJ-N8t" firstAttribute="top" secondItem="vSI-96-4qD" secondAttribute="bottom" constant="10" id="L5C-8s-xbC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JRk-hX-RM6" secondAttribute="trailing" constant="-20" id="OxV-ae-6ak"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gwI-aJ-N8t" secondAttribute="trailing" constant="-20" id="SUw-Md-EZK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Zwu-oH-V3W" secondAttribute="trailing" constant="-20" id="Sa6-RS-DPS"/>
                             <constraint firstAttribute="leadingMargin" secondItem="JRk-hX-RM6" secondAttribute="leading" constant="20" id="THs-a7-m7W"/>
+                            <constraint firstItem="WR9-HM-yHH" firstAttribute="leading" secondItem="1h2-yn-ikd" secondAttribute="leadingMargin" constant="-20" id="VN1-8e-Tg6"/>
                             <constraint firstItem="vSI-96-4qD" firstAttribute="centerY" secondItem="1h2-yn-ikd" secondAttribute="centerY" multiplier="0.15" id="XZX-3q-EvU"/>
                             <constraint firstItem="dNC-82-a6W" firstAttribute="top" secondItem="gwI-aJ-N8t" secondAttribute="bottom" id="aFe-NK-m7u"/>
                             <constraint firstItem="dNC-82-a6W" firstAttribute="top" secondItem="JRk-hX-RM6" secondAttribute="bottom" constant="200" id="bc3-nr-3zk"/>
@@ -120,6 +138,8 @@
                             <constraint firstItem="Zwu-oH-V3W" firstAttribute="top" secondItem="vSI-96-4qD" secondAttribute="bottom" constant="10" id="ej3-kw-HlI"/>
                             <constraint firstItem="dNC-82-a6W" firstAttribute="top" secondItem="Zwu-oH-V3W" secondAttribute="bottom" id="g2m-UD-Gj1"/>
                             <constraint firstItem="vSI-96-4qD" firstAttribute="width" secondItem="1h2-yn-ikd" secondAttribute="width" multiplier="0.8" id="pUH-ub-bjV"/>
+                            <constraint firstItem="dNC-82-a6W" firstAttribute="top" secondItem="WR9-HM-yHH" secondAttribute="bottom" id="scw-PI-zyQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WR9-HM-yHH" secondAttribute="trailing" constant="-20" id="uDc-bs-EAa"/>
                             <constraint firstItem="gwI-aJ-N8t" firstAttribute="leading" secondItem="1h2-yn-ikd" secondAttribute="leadingMargin" constant="-20" id="vHW-M2-ohy"/>
                             <constraint firstItem="vSI-96-4qD" firstAttribute="centerX" secondItem="1h2-yn-ikd" secondAttribute="centerX" id="wn9-aI-TlE"/>
                             <constraint firstItem="Zwu-oH-V3W" firstAttribute="leading" secondItem="1h2-yn-ikd" secondAttribute="leadingMargin" constant="-20" id="yTN-sL-1yY"/>
@@ -128,6 +148,7 @@
                     <navigationItem key="navigationItem" id="nBZ-39-PZd"/>
                     <connections>
                         <outlet property="mapview" destination="JRk-hX-RM6" id="gtL-Uy-zgb"/>
+                        <outlet property="messageview" destination="WR9-HM-yHH" id="wNr-ik-bQb"/>
                         <outlet property="segmentedControl" destination="vSI-96-4qD" id="lr6-jo-Zxa"/>
                         <outlet property="tableview" destination="gwI-aJ-N8t" id="e4v-dV-98Q"/>
                         <outlet property="tableview2" destination="Zwu-oH-V3W" id="tiV-Lp-Rpw"/>
