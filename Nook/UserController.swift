@@ -53,7 +53,6 @@ class UserController: NSObject {
         defaults.removeObject(forKey: "fullName")
         defaults.removeObject(forKey: "email")
         defaults.removeObject(forKey: "password")
-        defaults.removeObject(forKey: "fbID")
         defaults.synchronize()
         
         self.currentUser = nil

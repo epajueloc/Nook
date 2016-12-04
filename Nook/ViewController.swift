@@ -51,18 +51,30 @@ class ViewController: UIViewController {
         updateAvailability(availability: NookAvailability.Green)
         progressArcAngle(availability: NookAvailability.Green)
 
-        // Add persistence here (store availability for specific nook)
-        
+        // Persistence (store availability for specific nook)
+        let defaults = UserDefaults.standard
+        defaults.set(NookAvailability.Green.rawValue, forKey: "\(titlePassed):availability")
+        defaults.synchronize()
     }
     
     @IBAction func yellowButtonPressed(_ sender: Any) {
         updateAvailability(availability: NookAvailability.Yellow)
         progressArcAngle(availability: NookAvailability.Yellow)
+        
+        // Persistence (store availability for specific nook)
+        let defaults = UserDefaults.standard
+        defaults.set(NookAvailability.Yellow.rawValue, forKey: "\(titlePassed):availability")
+        defaults.synchronize()
     }
     
     @IBAction func redButtonPressed(_ sender: Any) {
         updateAvailability(availability: NookAvailability.Red)
         progressArcAngle(availability: NookAvailability.Red)
+        
+        // Persistence (store availability for specific nook)
+        let defaults = UserDefaults.standard
+        defaults.set(NookAvailability.Red.rawValue, forKey: "\(titlePassed):availability")
+        defaults.synchronize()
     }
     
     func availabilityToText(availability: NookAvailability) {
@@ -119,17 +131,15 @@ class ViewController: UIViewController {
     
     func removeFromFavorites(_ title:String, coordinate:CLLocationCoordinate2D, availability:NookAvailability, hours:String, id:Int) {
         
-//        NookViewController.sharedInstance.favoriteNooks = NookViewController.sharedInstance.favoriteNooks.filter() { $0 !== NookController(title: titlePassed, coordinate: CLLocationCoordinate2D(), availability: availabilityPassed, hours: hoursPassed, id:idPassed) }
-        
-        // Need to change this remove function
-        
-        for nook in NookViewController.sharedInstance.favoriteNooks {
-            if nook.title == title && nook.availability == availability && nook.hours == hours && nook.id == id {
-                print("Nook has been deleted from your favorites")
-                NookViewController.sharedInstance.favoriteNooks.removeFirst()
+        let nooks = NookViewController.sharedInstance.favoriteNooks
+        var new_nooks = [NookController]()
+
+        for nook in nooks {
+            if nook.id != id {
+                new_nooks.append(nook)
             }
         }
-        
+        NookViewController.sharedInstance.favoriteNooks = new_nooks
         
         // Is this right? Nope - should not be set
 //        let defaults = UserDefaults.standard
@@ -147,9 +157,9 @@ class ViewController: UIViewController {
         
         currentNook = NookController(title:titlePassed, coordinate:coordinatePassed, availability:availabilityPassed, hours:hoursPassed, id:idPassed, distance:distancePassed)
         
-        // Note: not currently checking for coordinate equality or distance
+        var duplicateBool = false
         for nook in NookViewController.sharedInstance.favoriteNooks {
-            if nook.title == title && nook.availability == availability && nook.hours == hours && nook.id == id {
+            if nook.id == id {
                 duplicateBool = true
             } else {
                 duplicateBool = false
@@ -160,6 +170,15 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
+        
+        // Set availability to display based on NSUserDefault value
+        let defaults = UserDefaults.standard
+        let availabilityString: String? = defaults.string(forKey: "\(titlePassed):availability")
+        if let availabilitySet = availabilityString {
+            availabilityPassed = NookAvailability(rawValue: availabilitySet)
+        } else {
+            print("No availibility found")
+        }
         
         navigationBarTitle.title = titlePassed
         hoursLabel.text = hoursPassed
@@ -173,7 +192,6 @@ class ViewController: UIViewController {
         greenButton.layer.cornerRadius = 15
         yellowButton.layer.cornerRadius = 15
         redButton.layer.cornerRadius = 15
-        
     }
 
     override func didReceiveMemoryWarning() {

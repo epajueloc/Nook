@@ -18,6 +18,7 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
     var idToPass:Int!
     var coordinateToPass: CLLocationCoordinate2D!
     var distanceToPass: Double!
+    var currentNook: NookController?
     
     let locationManager = CLLocationManager()
     var authorized = false
@@ -65,7 +66,6 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
     
     // One row per nook.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         var count:Int?
         
         if tableView == self.tableview {
@@ -77,7 +77,6 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
         else {
             count = NookViewController.sharedInstance.nearbyNooks.count
         }
-        
         return count!
     }
     
@@ -88,7 +87,6 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
         if tableView == self.tableview {
             cell = tableView.dequeueReusableCell(withIdentifier: "customcell1", for: indexPath)
             cell!.textLabel?.text = NookViewController.sharedInstance.favoriteNooks[indexPath.row].title
-            
         }
         else if tableView == self.tableview2 {
             cell = tableView.dequeueReusableCell(withIdentifier: "customcell2", for: indexPath)
@@ -106,33 +104,32 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
     // When a row is tapped, store in variables the properties of nook
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        let entry1 = NookViewController.sharedInstance.favoriteNooks[indexPath.row]
-//        let entry2 = NookViewController.sharedInstance.nooks[indexPath.row]
-//        let entry3 = NookViewController.sharedInstance.nooks[indexPath.row]
-        
         if tableView == self.tableview {
-            titleToPass = NookViewController.sharedInstance.favoriteNooks[indexPath.row].title
-            hoursToPass = NookViewController.sharedInstance.favoriteNooks[indexPath.row].hours
-            availabilityToPass = NookViewController.sharedInstance.favoriteNooks[indexPath.row].availability
-            idToPass = NookViewController.sharedInstance.favoriteNooks[indexPath.row].id
-            coordinateToPass = NookViewController.sharedInstance.favoriteNooks[indexPath.row].coordinate
-            distanceToPass = NookViewController.sharedInstance.favoriteNooks[indexPath.row].distance
+            let entry1 = NookViewController.sharedInstance.favoriteNooks[indexPath.row]
+            titleToPass = entry1.title
+            hoursToPass = entry1.hours
+            availabilityToPass = entry1.availability
+            idToPass = entry1.id
+            coordinateToPass = entry1.coordinate
+            distanceToPass = entry1.distance
         }
         else if tableView == self.tableview2 {
-            titleToPass = NookViewController.sharedInstance.nooks[indexPath.row].title
-            hoursToPass = NookViewController.sharedInstance.nooks[indexPath.row].hours
-            availabilityToPass = NookViewController.sharedInstance.nooks[indexPath.row].availability
-            idToPass = NookViewController.sharedInstance.nooks[indexPath.row].id
-            coordinateToPass = NookViewController.sharedInstance.nooks[indexPath.row].coordinate
-            distanceToPass = NookViewController.sharedInstance.nooks[indexPath.row].distance
+            let entry2 = NookViewController.sharedInstance.nooks[indexPath.row]
+            titleToPass = entry2.title
+            hoursToPass = entry2.hours
+            availabilityToPass = entry2.availability
+            idToPass = entry2.id
+            coordinateToPass = entry2.coordinate
+            distanceToPass = entry2.distance
         }
         else {
-            titleToPass = NookViewController.sharedInstance.nearbyNooks[indexPath.row].title
-            hoursToPass = NookViewController.sharedInstance.nearbyNooks[indexPath.row].hours
-            availabilityToPass = NookViewController.sharedInstance.nearbyNooks[indexPath.row].availability
-            idToPass = NookViewController.sharedInstance.nearbyNooks[indexPath.row].id
-            coordinateToPass = NookViewController.sharedInstance.nearbyNooks[indexPath.row].coordinate
-            distanceToPass = NookViewController.sharedInstance.nearbyNooks[indexPath.row].distance
+            let entry3 = NookViewController.sharedInstance.nearbyNooks[indexPath.row]
+            titleToPass = entry3.title
+            hoursToPass = entry3.hours
+            availabilityToPass = entry3.availability
+            idToPass = entry3.id
+            coordinateToPass = entry3.coordinate
+            distanceToPass = entry3.distance
             
             // When a row is tapped, pan the map to its matching annotation.
             // Center only for entry 2 - check this
@@ -144,22 +141,20 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        var add = UITableViewRowAction()
-        var delete = UITableViewRowAction()
+        
         if tableView == self.tableview2 {
-            add = UITableViewRowAction(style:.normal, title:"Add") {action, index in
+            let add = UITableViewRowAction(style:.normal, title:"Add") {action, index in
             }
             add.backgroundColor = .orange
+            return [add]
         } else if tableView == self.tableview {
-            delete = UITableViewRowAction(style:.normal, title:"Delete") {action, index in
+            let delete = UITableViewRowAction(style:.normal, title:"Delete") {action, index in
 //                tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
             }
             delete.backgroundColor = .red
+            return [delete]
         }
-        
-        // Need to edit so that add only shows on search and delete on favorites (already did this but empty space is showing)
-
-        return [add,delete]
+        return nil
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -219,6 +214,40 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
     
     // MARK: Other functions
     
+    
+    // Not being used right now
+    func addToFavorites() {
+        NookViewController.sharedInstance.favoriteNooks.append(NookController(title:titleToPass,coordinate:CLLocationCoordinate2D(),availability:availabilityToPass,hours:hoursToPass, id:idToPass, distance:distanceToPass))
+        
+        // Persistence below is not letting the function addtoFavorites run
+        
+        // Persistence
+        //        let defaults = UserDefaults.standard
+        //        defaults.set(titlePassed, forKey: "title")
+        //        defaults.set(coordinatePassed.latitude, forKey: "latitude")
+        //        defaults.set(coordinatePassed.longitude, forKey: "longitude")
+        //        defaults.set(availabilityPassed, forKey: "availability")
+        //        defaults.set(hoursPassed, forKey: "hours")
+        //        defaults.set(idPassed, forKey: "id")
+    }
+    
+    
+    // Not being used right now
+    func checkDuplicates(_ title:String, coordinate:CLLocationCoordinate2D, availability:NookAvailability, hours:String, id:Int, distance:Double) -> Bool {
+        
+        currentNook = NookController(title:title, coordinate:coordinate, availability:availability, hours:hoursToPass, id:id, distance:distance)
+        
+        var duplicateBool = false
+        for nook in NookViewController.sharedInstance.favoriteNooks {
+            if nook.id == id {
+                duplicateBool = true
+            } else {
+                duplicateBool = false
+            }
+        }
+        return duplicateBool
+    }
+    
     func calculateDistance() {
         // Set current user's location
         let currentLocation = locationManager.location
@@ -230,6 +259,7 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
         }
     }
     
+    // Is this working?
     func sortByDistance() {
         NookViewController.sharedInstance.nearbyNooks.sort {
             $0.distance < $1.distance

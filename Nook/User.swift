@@ -31,9 +31,9 @@ class User: NSObject, NSCoding {
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(firstName, forKey: "firstName")
-        aCoder.encode(firstName, forKey: "firstName")
-        aCoder.encode(firstName, forKey: "firstName")
-        aCoder.encode(firstName, forKey: "firstName")
+        aCoder.encode(lastName, forKey: "lastName")
+        aCoder.encode(email, forKey: "email")
+        aCoder.encode(password, forKey: "password")
     }
     
 }

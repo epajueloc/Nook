@@ -32,13 +32,9 @@ class LoginViewController: UIViewController {
         window?.rootViewController = viewController
     }
     
-    
-    
     // Initial view
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     override func didReceiveMemoryWarning() {
