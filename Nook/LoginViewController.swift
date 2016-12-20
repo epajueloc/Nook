@@ -35,6 +35,15 @@ class LoginViewController: UIViewController {
     // Initial view
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set corner radius of buttons
+        registerButton.layer.cornerRadius = 15
+        loginButton.layer.cornerRadius = 15
+        
+        // Change borders
+        loginButton.layer.borderWidth = 1
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

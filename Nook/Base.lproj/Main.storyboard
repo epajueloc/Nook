@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="f73-XT-Ede">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="f73-XT-Ede">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -60,7 +60,7 @@
                                         <rect key="frame" x="0.0" y="28" width="383" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JOa-fg-SVt" id="ndb-FY-8nm">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -75,7 +75,7 @@
                                         <rect key="frame" x="0.0" y="28" width="383" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lUg-i8-qmF" id="Ey0-ts-Xz4">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -89,7 +89,7 @@
                                         <rect key="frame" x="0.0" y="28" width="383" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="og4-Fk-23x" id="2VO-X8-kxn">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -200,40 +200,22 @@
                                         <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="IBColor1">
-                                        <color key="value" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="IBColor2">
-                                        <color key="value" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="IBColor3">
-                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.1080800849" green="0.31864141629999998" blue="0.54308894230000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyC-k9-GjB">
-                                <rect key="frame" x="16" y="517" width="114.5" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Green"/>
-                                <connections>
-                                    <action selector="greenButtonPressed:" destination="kL1-bp-4Vy" eventType="touchUpInside" id="ng4-nQ-rCO"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1w-nD-5aG">
-                                <rect key="frame" x="244" y="517" width="114.5" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Red">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <rect key="frame" x="50.5" y="597" width="274" height="30"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.33725490200000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="It's SO full"/>
                                 <connections>
                                     <action selector="redButtonPressed:" destination="kL1-bp-4Vy" eventType="touchUpInside" id="Jcn-kZ-kI5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAB-8K-SEZ">
-                                <rect key="frame" x="130.5" y="517" width="113.5" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Yellow">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <rect key="frame" x="51" y="557" width="274" height="30"/>
+                                <color key="backgroundColor" red="0.99215686274509807" green="0.67450980392156867" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="It's not too bad"/>
                                 <connections>
                                     <action selector="yellowButtonPressed:" destination="kL1-bp-4Vy" eventType="touchUpInside" id="0TG-27-uU1"/>
                                 </connections>
@@ -244,25 +226,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyC-k9-GjB">
+                                <rect key="frame" x="50.5" y="517" width="274" height="30"/>
+                                <color key="backgroundColor" red="0.45405321182206371" green="0.8830504441624365" blue="0.48728021505118324" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="There's no one here!"/>
+                                <connections>
+                                    <action selector="greenButtonPressed:" destination="kL1-bp-4Vy" eventType="touchUpInside" id="ng4-nQ-rCO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="p1w-nD-5aG" firstAttribute="width" secondItem="Kb8-Js-7gd" secondAttribute="width" multiplier="0.3333" id="3Uh-JE-dVd"/>
+                            <constraint firstItem="p1w-nD-5aG" firstAttribute="width" secondItem="Kb8-Js-7gd" secondAttribute="width" multiplier="0.8" id="3Uh-JE-dVd"/>
                             <constraint firstItem="Kb8-Js-7gd" firstAttribute="top" secondItem="Dah-EP-XLr" secondAttribute="bottom" constant="30" id="CRQ-Jn-wBu"/>
-                            <constraint firstItem="yAB-8K-SEZ" firstAttribute="top" secondItem="Kb8-Js-7gd" secondAttribute="bottom" constant="80" id="Fpi-Fq-LIQ"/>
-                            <constraint firstItem="p1w-nD-5aG" firstAttribute="leading" secondItem="yAB-8K-SEZ" secondAttribute="trailing" id="GxW-he-fbW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kb8-Js-7gd" secondAttribute="trailing" id="KEq-fb-veq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="p1w-nD-5aG" secondAttribute="trailing" id="NEK-Pz-VDF"/>
                             <constraint firstItem="6VP-SA-BrW" firstAttribute="centerX" secondItem="75B-s7-8Ig" secondAttribute="centerX" id="Wi9-4L-e4Q"/>
-                            <constraint firstItem="AyC-k9-GjB" firstAttribute="width" secondItem="Kb8-Js-7gd" secondAttribute="width" multiplier="0.3333" id="WuD-e0-ifO"/>
-                            <constraint firstItem="AyC-k9-GjB" firstAttribute="leading" secondItem="75B-s7-8Ig" secondAttribute="leadingMargin" id="bC9-dl-kvQ"/>
+                            <constraint firstItem="AyC-k9-GjB" firstAttribute="width" secondItem="Kb8-Js-7gd" secondAttribute="width" multiplier="0.8" id="WuD-e0-ifO"/>
+                            <constraint firstItem="AyC-k9-GjB" firstAttribute="centerX" secondItem="75B-s7-8Ig" secondAttribute="centerX" id="fgo-hU-K5l"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Kb8-Js-7gd" secondAttribute="leading" id="gSs-zu-yoy"/>
-                            <constraint firstItem="yAB-8K-SEZ" firstAttribute="leading" secondItem="AyC-k9-GjB" secondAttribute="trailing" id="gcO-Gj-W1C"/>
-                            <constraint firstItem="yAB-8K-SEZ" firstAttribute="width" secondItem="Kb8-Js-7gd" secondAttribute="width" multiplier="0.3333" id="l1Y-2A-8ZO"/>
+                            <constraint firstItem="p1w-nD-5aG" firstAttribute="top" secondItem="yAB-8K-SEZ" secondAttribute="bottom" constant="10" id="hB1-Le-Zvq"/>
+                            <constraint firstItem="yAB-8K-SEZ" firstAttribute="width" secondItem="Kb8-Js-7gd" secondAttribute="width" multiplier="0.8" id="l1Y-2A-8ZO"/>
+                            <constraint firstItem="p1w-nD-5aG" firstAttribute="centerX" secondItem="75B-s7-8Ig" secondAttribute="centerX" id="lhq-Y3-f0g"/>
                             <constraint firstItem="6VP-SA-BrW" firstAttribute="width" secondItem="75B-s7-8Ig" secondAttribute="width" multiplier="0.5" id="osR-bX-35E"/>
                             <constraint firstItem="AyC-k9-GjB" firstAttribute="top" secondItem="Kb8-Js-7gd" secondAttribute="bottom" constant="80" id="prI-DQ-dM8"/>
+                            <constraint firstItem="yAB-8K-SEZ" firstAttribute="top" secondItem="AyC-k9-GjB" secondAttribute="bottom" constant="10" id="sVi-UG-g5S"/>
                             <constraint firstItem="6VP-SA-BrW" firstAttribute="top" secondItem="Kb8-Js-7gd" secondAttribute="bottom" constant="20" id="vA9-ip-ZxQ"/>
-                            <constraint firstItem="p1w-nD-5aG" firstAttribute="top" secondItem="Kb8-Js-7gd" secondAttribute="bottom" constant="80" id="wCe-Ls-BrG"/>
+                            <constraint firstItem="yAB-8K-SEZ" firstAttribute="centerX" secondItem="75B-s7-8Ig" secondAttribute="centerX" id="y5A-7F-6sQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Name" id="HTQ-J6-1dM">

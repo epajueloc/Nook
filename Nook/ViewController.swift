@@ -82,7 +82,7 @@ class ViewController: UIViewController {
             availabilityToDisplay = "It's SO full"
         }
         else if availability == .Yellow {
-            availabilityToDisplay = "Do as you wish"
+            availabilityToDisplay = "It's not too bad"
         }
         else if availability == .Green {
             availabilityToDisplay = "There's no one there!"
@@ -189,9 +189,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set corner radius
         greenButton.layer.cornerRadius = 15
         yellowButton.layer.cornerRadius = 15
         redButton.layer.cornerRadius = 15
+
+        // Set colors to labels
+        availabilityLabel.textColor = UIColor.init(red: 3/255, green: 44/255, blue: 90/255, alpha: 1.0)
+        hoursLabel.textColor = UIColor.init(red: 3/255, green: 44/255, blue: 90/255, alpha: 1.0)
+        greenButton.setTitleColor(UIColor.init(red: 3/255, green: 44/255, blue: 90/255, alpha: 1.0), for: .normal)
+         yellowButton.setTitleColor(UIColor.init(red: 3/255, green: 44/255, blue: 90/255, alpha: 1.0), for: .normal)
+         redButton.setTitleColor(UIColor.init(red: 3/255, green: 44/255, blue: 90/255, alpha: 1.0), for: .normal)
+        
     }
 
     override func didReceiveMemoryWarning() {

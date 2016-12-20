@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fZN-bA-xNX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fZN-bA-xNX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -171,9 +171,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKA-Pp-cIf">
-                                <rect key="frame" x="159" y="474" width="57" height="30"/>
+                                <rect key="frame" x="37.5" y="474" width="300" height="30"/>
+                                <color key="backgroundColor" red="0.01176470588" green="0.17254901959999999" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Register">
-                                    <color key="titleColor" red="0.1080800849" green="0.31864141629999998" blue="0.54308894230000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="registerButtonPressed:" destination="WYr-Sy-UCW" eventType="touchUpInside" id="mFg-Gh-ms2"/>
@@ -182,7 +183,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G04-ef-CYc">
-                                <rect key="frame" x="168.5" y="424" width="38" height="30"/>
+                                <rect key="frame" x="37.5" y="424" width="300" height="30"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.1080800849" green="0.31864141629999998" blue="0.54308894230000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -201,6 +202,13 @@
                                     <action selector="registerButtonTapped:" destination="r6u-zB-cBh" eventType="touchUpInside" id="MiF-ph-dyp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXT-Lj-gHb">
+                                <rect key="frame" x="104" y="184" width="166" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="57"/>
+                                <color key="textColor" red="0.011764705882352941" green="0.17254901960784313" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -210,9 +218,11 @@
                             <constraint firstItem="eys-Hi-aVx" firstAttribute="centerX" secondItem="wpZ-RA-CRg" secondAttribute="centerX" id="Afg-TT-sKo"/>
                             <constraint firstItem="smc-ke-YTB" firstAttribute="width" secondItem="wpZ-RA-CRg" secondAttribute="width" multiplier="0.6" id="Dg8-JI-18T"/>
                             <constraint firstItem="PKA-Pp-cIf" firstAttribute="top" secondItem="G04-ef-CYc" secondAttribute="bottom" constant="20" id="Num-M7-k9X"/>
+                            <constraint firstItem="G04-ef-CYc" firstAttribute="width" secondItem="wpZ-RA-CRg" secondAttribute="width" multiplier="0.8" id="Sd6-Ap-jMw"/>
                             <constraint firstItem="G04-ef-CYc" firstAttribute="top" secondItem="eys-Hi-aVx" secondAttribute="bottom" constant="30" id="V2h-3F-tsW"/>
                             <constraint firstItem="bs8-5w-qkq" firstAttribute="centerX" secondItem="wpZ-RA-CRg" secondAttribute="centerX" id="VCI-2v-tUh"/>
                             <constraint firstItem="eys-Hi-aVx" firstAttribute="top" secondItem="smc-ke-YTB" secondAttribute="bottom" constant="20" id="YQ4-xx-aiu"/>
+                            <constraint firstItem="PKA-Pp-cIf" firstAttribute="width" secondItem="wpZ-RA-CRg" secondAttribute="width" multiplier="0.8" id="eLZ-BI-IxP"/>
                             <constraint firstItem="bs8-5w-qkq" firstAttribute="top" secondItem="PKA-Pp-cIf" secondAttribute="bottom" constant="20" id="euz-2S-FT9"/>
                             <constraint firstItem="PKA-Pp-cIf" firstAttribute="centerX" secondItem="wpZ-RA-CRg" secondAttribute="centerX" id="psI-Ea-CqD"/>
                             <constraint firstItem="eys-Hi-aVx" firstAttribute="width" secondItem="wpZ-RA-CRg" secondAttribute="width" multiplier="0.6" id="wN1-ab-NOb"/>
@@ -227,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K98-Dg-NeQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="222" y="-89"/>
+            <point key="canvasLocation" x="221.59999999999999" y="-89.505247376311857"/>
         </scene>
     </scenes>
 </document>

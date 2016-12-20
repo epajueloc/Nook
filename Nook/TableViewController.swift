@@ -133,8 +133,8 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
             
             // When a row is tapped, pan the map to its matching annotation.
             // Center only for entry 2 - check this
-            mapview.setCenter(NookViewController.sharedInstance.nooks[indexPath.row].coordinate, animated: true)
-            mapview.selectAnnotation(NookViewController.sharedInstance.nooks[indexPath.row], animated: true)
+            mapview.setCenter(entry3.coordinate, animated: true)
+            mapview.selectAnnotation(entry3, animated: true)
             tableView.deselectRow(at: indexPath, animated: true)
         }
         self.performSegue(withIdentifier: "showView", sender: self)
