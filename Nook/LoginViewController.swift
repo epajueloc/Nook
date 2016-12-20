@@ -21,9 +21,6 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonPressed(_ sender: Any) {
     }
     
-    @IBAction func registerButtonPressed(_ sender: Any) {
-    }
-    
     @IBAction func continueButtonPressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateInitialViewController()
@@ -42,7 +39,7 @@ class LoginViewController: UIViewController {
         
         // Change borders
         loginButton.layer.borderWidth = 1
-        
+        loginButton.layer.borderColor = UIColor.init(red: 3/255, green: 44/255, blue: 90/255, alpha: 1.0).cgColor
         
     }
 

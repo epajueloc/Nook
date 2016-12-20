@@ -15,7 +15,7 @@
 		6A7AD74D1DD6D5F7001BFD1C /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7AD74C1DD6D5F7001BFD1C /* TableViewController.swift */; };
 		6A7AD7511DD7887C001BFD1C /* Nook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7AD7501DD7887C001BFD1C /* Nook.swift */; };
 		6AAC5F011DED1855006F5BB1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAC5F001DED1855006F5BB1 /* User.swift */; };
-		6AAC5F061DED1D7B006F5BB1 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AAC5F051DED1D7B006F5BB1 /* Registration.storyboard */; };
+		6AAC5F061DED1D7B006F5BB1 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AAC5F051DED1D7B006F5BB1 /* Onboarding.storyboard */; };
 		6AAC5F081DED213F006F5BB1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAC5F071DED213F006F5BB1 /* RegisterViewController.swift */; };
 		6AAC5F0A1DED2399006F5BB1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAC5F091DED2399006F5BB1 /* StringExtension.swift */; };
 		6AAC5F101DED2571006F5BB1 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAC5F0F1DED2571006F5BB1 /* UserController.swift */; };
@@ -34,7 +34,7 @@
 		6A7AD74C1DD6D5F7001BFD1C /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		6A7AD7501DD7887C001BFD1C /* Nook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nook.swift; sourceTree = "<group>"; };
 		6AAC5F001DED1855006F5BB1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		6AAC5F051DED1D7B006F5BB1 /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		6AAC5F051DED1D7B006F5BB1 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		6AAC5F071DED213F006F5BB1 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6AAC5F091DED2399006F5BB1 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		6AAC5F0F1DED2571006F5BB1 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				6A2203031DC57945002A70F1 /* Main.storyboard */,
-				6AAC5F051DED1D7B006F5BB1 /* Registration.storyboard */,
+				6AAC5F051DED1D7B006F5BB1 /* Onboarding.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -184,7 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A22030A1DC57945002A70F1 /* LaunchScreen.storyboard in Resources */,
-				6AAC5F061DED1D7B006F5BB1 /* Registration.storyboard in Resources */,
+				6AAC5F061DED1D7B006F5BB1 /* Onboarding.storyboard in Resources */,
 				6A2203071DC57945002A70F1 /* Assets.xcassets in Resources */,
 				6A2203051DC57945002A70F1 /* Main.storyboard in Resources */,
 			);

@@ -18,7 +18,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var backgroundBox: UIView!
+    @IBOutlet weak var registerButton: UIButton!
+    
     
     // MARK: IBActions
     @IBAction func registerButtonTapped(_ sender: Any) {
@@ -46,7 +47,7 @@ class RegisterViewController: UIViewController {
                 self.present(errorAlert, animated: true, completion: nil)
             }
             else {
-                let viewController = UIStoryboard(name:"TableViewController",bundle:nil).instantiateInitialViewController()
+                let viewController = UIStoryboard(name:"Main",bundle:nil).instantiateInitialViewController()
                 let window = UIApplication.shared.keyWindow
                 window?.rootViewController = viewController
             }
@@ -60,7 +61,9 @@ class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        backgroundBox.layer.cornerRadius = 10
+        
+        registerButton.layer.cornerRadius = 15
+        
     }
 
     override func didReceiveMemoryWarning() {
