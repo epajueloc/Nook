@@ -64,25 +64,37 @@
                                 <rect key="frame" x="37.5" y="391" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="emailFieldReturned:" destination="r6u-zB-cBh" eventType="primaryActionTriggered" id="oKw-j3-CMc"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9eb-3t-nSR">
                                 <rect key="frame" x="37.5" y="465" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="passwordFieldReturned:" destination="r6u-zB-cBh" eventType="primaryActionTriggered" id="ghA-l7-yP8"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mqo-cr-ZRs" userLabel="FirstName Field">
                                 <rect key="frame" x="37.5" y="243" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="no" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="firstNameFieldReturned:" destination="r6u-zB-cBh" eventType="primaryActionTriggered" id="JfK-c9-YdI"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iFN-bn-iqC" userLabel="LastName Field">
                                 <rect key="frame" x="37.5" y="317" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="no" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="lastNameFieldReturned:" destination="r6u-zB-cBh" eventType="primaryActionTriggered" id="f9y-ra-kyS"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeW-Wz-QD4">
                                 <rect key="frame" x="37.5" y="214" width="300" height="21"/>
@@ -165,13 +177,19 @@
                                 <rect key="frame" x="37.5" y="314" width="300" height="30"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="emailFieldReturned:" destination="WYr-Sy-UCW" eventType="primaryActionTriggered" id="u0q-4p-Okh"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eys-Hi-aVx">
                                 <rect key="frame" x="37.5" y="364" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="passwordFieldReturned:" destination="WYr-Sy-UCW" eventType="primaryActionTriggered" id="Ruk-wg-wvY"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKA-Pp-cIf">
                                 <rect key="frame" x="37.5" y="469" width="300" height="30"/>
@@ -180,7 +198,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="registerButtonPressed:" destination="WYr-Sy-UCW" eventType="touchUpInside" id="mFg-Gh-ms2"/>
+                                    <action selector="registerButtonPressed:" destination="WYr-Sy-UCW" eventType="touchUpInside" id="P4b-ZR-5Cj"/>
                                     <action selector="registerButtonTapped:" destination="r6u-zB-cBh" eventType="touchUpInside" id="9d0-u6-HKz"/>
                                     <segue destination="r6u-zB-cBh" kind="show" id="6e2-cU-VJm"/>
                                 </connections>
@@ -234,7 +252,9 @@
                     <navigationItem key="navigationItem" id="srj-tv-W4u"/>
                     <connections>
                         <outlet property="continueButton" destination="bs8-5w-qkq" id="32W-BK-P51"/>
+                        <outlet property="emailField" destination="smc-ke-YTB" id="lVH-oz-ZN1"/>
                         <outlet property="loginButton" destination="G04-ef-CYc" id="Ch8-Kk-a8h"/>
+                        <outlet property="passwordField" destination="eys-Hi-aVx" id="vRO-TL-lp4"/>
                         <outlet property="registerButton" destination="PKA-Pp-cIf" id="HGM-Kf-HiK"/>
                     </connections>
                 </viewController>

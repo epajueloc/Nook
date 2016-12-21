@@ -12,6 +12,8 @@ class LoginViewController: UIViewController {
 
     // MARK: IBOutlets
     
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
@@ -21,12 +23,23 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonPressed(_ sender: Any) {
     }
     
+    @IBAction func registerButtonPressed(_ sender: Any) {
+    }
+    
     @IBAction func continueButtonPressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateInitialViewController()
         let application = UIApplication.shared
         let window = application.keyWindow
         window?.rootViewController = viewController
+    }
+    
+    @IBAction func emailFieldReturned(_ sender: UITextField) {
+        passwordField.becomeFirstResponder()
+    }
+    
+    @IBAction func passwordFieldReturned(_ sender: UITextField) {
+        passwordField.resignFirstResponder()
     }
     
     // Initial view
@@ -41,10 +54,20 @@ class LoginViewController: UIViewController {
         loginButton.layer.borderWidth = 1
         loginButton.layer.borderColor = UIColor.init(red: 3/255, green: 44/255, blue: 90/255, alpha: 1.0).cgColor
         
+        // Dismiss keyboard when tap on screen
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target:self,action:#selector(LoginViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // Other functions
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
 }

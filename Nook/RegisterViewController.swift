@@ -58,16 +58,44 @@ class RegisterViewController: UIViewController {
         // Will we have problems when the keyboard appears? Check HolyCow
         
     }
+    
+    @IBAction func firstNameFieldReturned(_ sender: UITextField) {
+        lastNameField.becomeFirstResponder()
+    }
+    
+    @IBAction func lastNameFieldReturned(_ sender: UITextField) {
+        emailField.becomeFirstResponder()
+    }
+    
+    @IBAction func emailFieldReturned(_ sender: UITextField) {
+        passwordField.becomeFirstResponder()
+    }
+    
+    @IBAction func passwordFieldReturned(_ sender: UITextField) {
+        passwordField.resignFirstResponder()
+    }
+    
+    // MARK: Initial View
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         registerButton.layer.cornerRadius = 15
         
+        // Dismiss keyboard when tap on screen
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target:self,action:#selector(LoginViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: Other functions
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
 }
