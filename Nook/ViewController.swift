@@ -38,6 +38,11 @@ class ViewController: UIViewController {
     @IBAction func saveButtonPressed(_ sender: Any) {
         if checkDuplicates(titlePassed, coordinate: coordinatePassed, availability: availabilityPassed, hours: hoursPassed, id: idPassed) == false {
             addToFavorites()
+            
+            let successAlert = UIAlertController(title: "Success", message: "The nook was successfully added to your favorites!", preferredStyle: UIAlertControllerStyle.alert)
+            let dismissSuccessAlert = UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in })
+            successAlert.addAction(dismissSuccessAlert)
+            self.present(successAlert, animated: true, completion: nil)
         }
         else {
             let errorAlert = UIAlertController(title: "Error", message: "This nook is already in your favorites", preferredStyle: UIAlertControllerStyle.alert)
@@ -115,17 +120,10 @@ class ViewController: UIViewController {
     func addToFavorites() {
         NookViewController.sharedInstance.favoriteNooks.append(NookController(title:titlePassed,coordinate:CLLocationCoordinate2D(),availability:availabilityPassed,hours:hoursPassed, id:idPassed, distance:distancePassed))
         
-        // Persistence below is not letting the function addtoFavorites run
-        
-        // Persistence
+        // Persistence is not letting the function run
 //        let defaults = UserDefaults.standard
-//        defaults.set(titlePassed, forKey: "title")
-//        defaults.set(coordinatePassed.latitude, forKey: "latitude")
-//        defaults.set(coordinatePassed.longitude, forKey: "longitude")
-//        defaults.set(availabilityPassed, forKey: "availability")
-//        defaults.set(hoursPassed, forKey: "hours")
-//        defaults.set(idPassed, forKey: "id")
-        
+//        defaults.set(NookViewController.sharedInstance.favoriteNooks, forKey: "SavedArray")
+//        defaults.synchronize()
         
     }
     

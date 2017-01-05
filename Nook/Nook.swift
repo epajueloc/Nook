@@ -77,7 +77,4 @@ class NookViewController: UIViewController {
     // Array with favorite nooks
     var favoriteNooks = [NookController]()
     
-    // Array with nearby nooks
-    var nearbyNooks = [NookController]()
-    
 }

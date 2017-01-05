@@ -31,7 +31,6 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
     @IBOutlet weak var tableview2: UITableView!
     @IBOutlet weak var tableview3: UITableView!
     @IBOutlet weak var mapview: MKMapView!
-    @IBOutlet weak var messageview: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     // MARK: IBActions
@@ -43,20 +42,17 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
             tableview2.isHidden = true
             tableview3.isHidden = true
             mapview.isHidden = true
-            messageview.isHidden = true
         case 1:
             tableview.isHidden = true
             tableview2.isHidden = false
             tableview3.isHidden = true
             mapview.isHidden = true
-            messageview.isHidden = true
         case 2:
         //If we don't use tableview3, get rid of it
             tableview.isHidden = true
             tableview2.isHidden = true
             tableview3.isHidden = false
             mapview.isHidden = false
-            messageview.isHidden = true
         default:
             break
         }
@@ -75,7 +71,7 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
             count = NookViewController.sharedInstance.nooks.count
         }
         else {
-            count = NookViewController.sharedInstance.nearbyNooks.count
+            count = NookViewController.sharedInstance.nooks.count
         }
         return count!
     }
@@ -89,12 +85,15 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
             cell!.textLabel?.text = NookViewController.sharedInstance.favoriteNooks[indexPath.row].title
         }
         else if tableView == self.tableview2 {
+            sortAlphabetically()
             cell = tableView.dequeueReusableCell(withIdentifier: "customcell2", for: indexPath)
             cell!.textLabel?.text = NookViewController.sharedInstance.nooks[indexPath.row].title
         }
         else {
+            calculateDistance()
+            sortByDistance()
             cell = tableView.dequeueReusableCell(withIdentifier: "customcell3", for: indexPath)
-            cell!.textLabel?.text = NookViewController.sharedInstance.nearbyNooks[indexPath.row].title
+            cell!.textLabel?.text = NookViewController.sharedInstance.nooks[indexPath.row].title
         }
         return cell!
     }
@@ -123,7 +122,7 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
             distanceToPass = entry2.distance
         }
         else {
-            let entry3 = NookViewController.sharedInstance.nearbyNooks[indexPath.row]
+            let entry3 = NookViewController.sharedInstance.nooks[indexPath.row]
             titleToPass = entry3.title
             hoursToPass = entry3.hours
             availabilityToPass = entry3.availability
@@ -132,14 +131,14 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
             distanceToPass = entry3.distance
             
             // When a row is tapped, pan the map to its matching annotation.
-            // Center only for entry 2 - check this
-            mapview.setCenter(entry3.coordinate, animated: true)
-            mapview.selectAnnotation(entry3, animated: true)
-            tableView.deselectRow(at: indexPath, animated: true)
+//            mapview.setCenter(entry3.coordinate, animated: true)
+//            mapview.selectAnnotation(entry3, animated: true)
+//            tableView.deselectRow(at: indexPath, animated: true)
         }
         self.performSegue(withIdentifier: "showView", sender: self)
     }
     
+    // DELETE IF I don't use it
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         if tableView == self.tableview2 {
@@ -177,13 +176,6 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let center = CLLocationCoordinate2D(latitude:41.702960,longitude:-86.238826)
-        let span = MKCoordinateSpanMake(0.02, 0.02)
-        let region = MKCoordinateRegion(center:center, span:span)
-        mapview.setRegion(region, animated: true)
-    }
-    
     // MARK: Map View Delegate
     
     // Create red pin annotations for our nooks, and enable callouts
@@ -203,7 +195,6 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView?.pinTintColor = UIColor.red
          
-            // Callouts
             annotationView!.canShowCallout = true
         }
         
@@ -215,24 +206,13 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
     // MARK: Other functions
     
     
-    // Not being used right now
+    // Not being used right now - DELETE
     func addToFavorites() {
         NookViewController.sharedInstance.favoriteNooks.append(NookController(title:titleToPass,coordinate:CLLocationCoordinate2D(),availability:availabilityToPass,hours:hoursToPass, id:idToPass, distance:distanceToPass))
-        
-        // Persistence below is not letting the function addtoFavorites run
-        
-        // Persistence
-        //        let defaults = UserDefaults.standard
-        //        defaults.set(titlePassed, forKey: "title")
-        //        defaults.set(coordinatePassed.latitude, forKey: "latitude")
-        //        defaults.set(coordinatePassed.longitude, forKey: "longitude")
-        //        defaults.set(availabilityPassed, forKey: "availability")
-        //        defaults.set(hoursPassed, forKey: "hours")
-        //        defaults.set(idPassed, forKey: "id")
     }
     
     
-    // Not being used right now
+    // Not being used right now - DELETE
     func checkDuplicates(_ title:String, coordinate:CLLocationCoordinate2D, availability:NookAvailability, hours:String, id:Int, distance:Double) -> Bool {
         
         currentNook = NookController(title:title, coordinate:coordinate, availability:availability, hours:hoursToPass, id:id, distance:distance)
@@ -259,10 +239,15 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
         }
     }
     
-    // Is this working?
     func sortByDistance() {
-        NookViewController.sharedInstance.nearbyNooks.sort {
+        NookViewController.sharedInstance.nooks.sort {
             $0.distance < $1.distance
+        }
+    }
+    
+    func sortAlphabetically() {
+        NookViewController.sharedInstance.nooks.sort {
+            $0.title! < $1.title!
         }
     }
     
@@ -284,8 +269,6 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
         tableview3.delegate = self
         tableview3.dataSource = self
         
-        messageview.isHidden = true
-        
         mapview.delegate = self
         
         locationManager.delegate = self
@@ -294,13 +277,16 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
         
         self.mapview.showsUserLocation = true
         mapview.addAnnotations(NookViewController.sharedInstance.nooks)
-        
-        sortByDistance()
-        
+                
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
+        
+        if let entry = NookViewController.sharedInstance.nooks.first {
+            mapview.region = MKCoordinateRegion(center: entry.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: IBOutlets
     
@@ -18,6 +18,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
 
+    // Amount that screen moves with keyboard
+    let movement:CGFloat = 130.0
+    
     // MARK: IBActions
     
     @IBAction func loginButtonPressed(_ sender: Any) {
@@ -46,6 +49,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        // Set delegates
+        emailField.delegate = self
+        passwordField.delegate = self
+        
         // Set corner radius of buttons
         registerButton.layer.cornerRadius = 15
         loginButton.layer.cornerRadius = 15
@@ -65,6 +73,18 @@ class LoginViewController: UIViewController {
     }
     
     // Other functions
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.bounds = self.view.bounds.offsetBy(dx: 0, dy: self.movement)
+        })
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.bounds = self.view.bounds.offsetBy(dx: 0, dy: -self.movement)
+        })
+    }
     
     func dismissKeyboard() {
         view.endEditing(true)
