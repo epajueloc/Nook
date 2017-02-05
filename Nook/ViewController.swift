@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import FirebaseDatabase
 
 class ViewController: UIViewController {
     
@@ -55,31 +56,25 @@ class ViewController: UIViewController {
     @IBAction func greenButtonPressed(_ sender: Any) {
         updateAvailability(availability: NookAvailability.Green)
         progressArcAngle(availability: NookAvailability.Green)
-
-        // Persistence (store availability for specific nook)
-        let defaults = UserDefaults.standard
-        defaults.set(NookAvailability.Green.rawValue, forKey: "\(titlePassed):availability")
-        defaults.synchronize()
+        
+        let ref: FIRDatabaseReference = FIRDatabase.database().reference()
+        ref.child("availability").child(titlePassed).setValue("green")
     }
     
     @IBAction func yellowButtonPressed(_ sender: Any) {
         updateAvailability(availability: NookAvailability.Yellow)
         progressArcAngle(availability: NookAvailability.Yellow)
         
-        // Persistence (store availability for specific nook)
-        let defaults = UserDefaults.standard
-        defaults.set(NookAvailability.Yellow.rawValue, forKey: "\(titlePassed):availability")
-        defaults.synchronize()
+        let ref: FIRDatabaseReference = FIRDatabase.database().reference()
+        ref.child("availability").child(titlePassed).setValue("yellow")
     }
     
     @IBAction func redButtonPressed(_ sender: Any) {
         updateAvailability(availability: NookAvailability.Red)
         progressArcAngle(availability: NookAvailability.Red)
         
-        // Persistence (store availability for specific nook)
-        let defaults = UserDefaults.standard
-        defaults.set(NookAvailability.Red.rawValue, forKey: "\(titlePassed):availability")
-        defaults.synchronize()
+        let ref: FIRDatabaseReference = FIRDatabase.database().reference()
+        ref.child("availability").child(titlePassed).setValue("red")
     }
     
     func availabilityToText(availability: NookAvailability) {
@@ -119,6 +114,9 @@ class ViewController: UIViewController {
     
     func addToFavorites() {
         NookViewController.sharedInstance.favoriteNooks.append(NookController(title:titlePassed,coordinate:CLLocationCoordinate2D(),availability:availabilityPassed,hours:hoursPassed, id:idPassed, distance:distancePassed))
+        
+        //let ref: FIRDatabaseReference = FIRDatabase.database().reference()
+        //ref.child("favorites").child(titlePassed).setValue(true)
         
         // Persistence is not letting the function run
 //        let defaults = UserDefaults.standard
@@ -170,6 +168,7 @@ class ViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         
         // Set availability to display based on NSUserDefault value
+        /*
         let defaults = UserDefaults.standard
         let availabilityString: String? = defaults.string(forKey: "\(titlePassed):availability")
         if let availabilitySet = availabilityString {
@@ -177,6 +176,18 @@ class ViewController: UIViewController {
         } else {
             print("No availibility found")
         }
+        */
+        // Set availability to display based on Firebase value
+        let ref: FIRDatabaseReference = FIRDatabase.database().reference()
+        ref.child("availability")
+            .child(titlePassed)
+            .observe(FIRDataEventType.value, with: { (snapshot) in
+                if let value = snapshot.value as? String {
+                    self.availabilityPassed = NookAvailability(rawValue: value)
+                    self.updateAvailability(availability: self.availabilityPassed)
+                    self.progressArcAngle(availability: self.availabilityPassed)
+                }
+        })
         
         navigationBarTitle.title = titlePassed
         hoursLabel.text = hoursPassed

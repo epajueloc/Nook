@@ -1,378 +1,1015 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		6A2203001DC57945002A70F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2202FF1DC57945002A70F1 /* AppDelegate.swift */; };
-		6A2203021DC57945002A70F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203011DC57945002A70F1 /* ViewController.swift */; };
-		6A2203051DC57945002A70F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2203031DC57945002A70F1 /* Main.storyboard */; };
-		6A2203071DC57945002A70F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A2203061DC57945002A70F1 /* Assets.xcassets */; };
-		6A22030A1DC57945002A70F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2203081DC57945002A70F1 /* LaunchScreen.storyboard */; };
-		6A7AD74D1DD6D5F7001BFD1C /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7AD74C1DD6D5F7001BFD1C /* TableViewController.swift */; };
-		6A7AD7511DD7887C001BFD1C /* Nook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7AD7501DD7887C001BFD1C /* Nook.swift */; };
-		6AAC5F011DED1855006F5BB1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAC5F001DED1855006F5BB1 /* User.swift */; };
-		6AAC5F061DED1D7B006F5BB1 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AAC5F051DED1D7B006F5BB1 /* Onboarding.storyboard */; };
-		6AAC5F081DED213F006F5BB1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAC5F071DED213F006F5BB1 /* RegisterViewController.swift */; };
-		6AAC5F0A1DED2399006F5BB1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAC5F091DED2399006F5BB1 /* StringExtension.swift */; };
-		6AAC5F101DED2571006F5BB1 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAC5F0F1DED2571006F5BB1 /* UserController.swift */; };
-		6ABB32461DDECE5400A9309D /* ProgressArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABB32451DDECE5400A9309D /* ProgressArc.swift */; };
-		6AEDC0E41DF07FA6005D6EAD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEDC0E31DF07FA6005D6EAD /* LoginViewController.swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXFileReference section */
-		6A2202FC1DC57945002A70F1 /* Nook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nook.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A2202FF1DC57945002A70F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6A2203011DC57945002A70F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6A2203041DC57945002A70F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6A2203061DC57945002A70F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6A2203091DC57945002A70F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6A22030B1DC57945002A70F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A7AD74C1DD6D5F7001BFD1C /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		6A7AD7501DD7887C001BFD1C /* Nook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nook.swift; sourceTree = "<group>"; };
-		6AAC5F001DED1855006F5BB1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		6AAC5F051DED1D7B006F5BB1 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
-		6AAC5F071DED213F006F5BB1 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		6AAC5F091DED2399006F5BB1 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		6AAC5F0F1DED2571006F5BB1 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
-		6ABB32451DDECE5400A9309D /* ProgressArc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressArc.swift; sourceTree = "<group>"; };
-		6AEDC0E31DF07FA6005D6EAD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		6A2202F91DC57944002A70F1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		6A2202F31DC57944002A70F1 = {
-			isa = PBXGroup;
-			children = (
-				6A2202FE1DC57945002A70F1 /* Nook */,
-				6A2202FD1DC57945002A70F1 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		6A2202FD1DC57945002A70F1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6A2202FC1DC57945002A70F1 /* Nook.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		6A2202FE1DC57945002A70F1 /* Nook */ = {
-			isa = PBXGroup;
-			children = (
-				6ABB324A1DDF9D7700A9309D /* Model */,
-				6AAC5F021DED191A006F5BB1 /* Model Controller */,
-				6ABB32491DDF9D6E00A9309D /* Storyboard */,
-				6ABB32471DDF9D5900A9309D /* ViewController */,
-				6A2202FF1DC57945002A70F1 /* AppDelegate.swift */,
-				6A2203061DC57945002A70F1 /* Assets.xcassets */,
-				6A2203081DC57945002A70F1 /* LaunchScreen.storyboard */,
-				6A22030B1DC57945002A70F1 /* Info.plist */,
-				6ABB32451DDECE5400A9309D /* ProgressArc.swift */,
-				6AAC5F091DED2399006F5BB1 /* StringExtension.swift */,
-			);
-			path = Nook;
-			sourceTree = "<group>";
-		};
-		6AAC5F021DED191A006F5BB1 /* Model Controller */ = {
-			isa = PBXGroup;
-			children = (
-				6AAC5F0F1DED2571006F5BB1 /* UserController.swift */,
-			);
-			name = "Model Controller";
-			sourceTree = "<group>";
-		};
-		6ABB32471DDF9D5900A9309D /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				6A2203011DC57945002A70F1 /* ViewController.swift */,
-				6A7AD74C1DD6D5F7001BFD1C /* TableViewController.swift */,
-				6AAC5F071DED213F006F5BB1 /* RegisterViewController.swift */,
-				6AEDC0E31DF07FA6005D6EAD /* LoginViewController.swift */,
-			);
-			name = ViewController;
-			sourceTree = "<group>";
-		};
-		6ABB32491DDF9D6E00A9309D /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				6A2203031DC57945002A70F1 /* Main.storyboard */,
-				6AAC5F051DED1D7B006F5BB1 /* Onboarding.storyboard */,
-			);
-			name = Storyboard;
-			sourceTree = "<group>";
-		};
-		6ABB324A1DDF9D7700A9309D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6A7AD7501DD7887C001BFD1C /* Nook.swift */,
-				6AAC5F001DED1855006F5BB1 /* User.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		6A2202FB1DC57944002A70F1 /* Nook */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6A22030E1DC57945002A70F1 /* Build configuration list for PBXNativeTarget "Nook" */;
-			buildPhases = (
-				6A2202F81DC57944002A70F1 /* Sources */,
-				6A2202F91DC57944002A70F1 /* Frameworks */,
-				6A2202FA1DC57944002A70F1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Nook;
-			productName = Nook;
-			productReference = 6A2202FC1DC57945002A70F1 /* Nook.app */;
-			productType = "com.apple.product-type.application";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		6A2202F41DC57944002A70F1 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0820;
-				ORGANIZATIONNAME = "Enrique Pajuelo";
-				TargetAttributes = {
-					6A2202FB1DC57944002A70F1 = {
-						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = A3VZR3SRTH;
-						ProvisioningStyle = Automatic;
-					};
-				};
-			};
-			buildConfigurationList = 6A2202F71DC57944002A70F1 /* Build configuration list for PBXProject "Nook" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 6A2202F31DC57944002A70F1;
-			productRefGroup = 6A2202FD1DC57945002A70F1 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				6A2202FB1DC57944002A70F1 /* Nook */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		6A2202FA1DC57944002A70F1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6A22030A1DC57945002A70F1 /* LaunchScreen.storyboard in Resources */,
-				6AAC5F061DED1D7B006F5BB1 /* Onboarding.storyboard in Resources */,
-				6A2203071DC57945002A70F1 /* Assets.xcassets in Resources */,
-				6A2203051DC57945002A70F1 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		6A2202F81DC57944002A70F1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6AAC5F101DED2571006F5BB1 /* UserController.swift in Sources */,
-				6A2203021DC57945002A70F1 /* ViewController.swift in Sources */,
-				6A7AD74D1DD6D5F7001BFD1C /* TableViewController.swift in Sources */,
-				6AAC5F081DED213F006F5BB1 /* RegisterViewController.swift in Sources */,
-				6AAC5F011DED1855006F5BB1 /* User.swift in Sources */,
-				6AAC5F0A1DED2399006F5BB1 /* StringExtension.swift in Sources */,
-				6A7AD7511DD7887C001BFD1C /* Nook.swift in Sources */,
-				6ABB32461DDECE5400A9309D /* ProgressArc.swift in Sources */,
-				6AEDC0E41DF07FA6005D6EAD /* LoginViewController.swift in Sources */,
-				6A2203001DC57945002A70F1 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		6A2203031DC57945002A70F1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6A2203041DC57945002A70F1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		6A2203081DC57945002A70F1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6A2203091DC57945002A70F1 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		6A22030C1DC57945002A70F1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		6A22030D1DC57945002A70F1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		6A22030F1DC57945002A70F1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A3VZR3SRTH;
-				INFOPLIST_FILE = Nook/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.enriquepajuelo.Nook;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		6A2203101DC57945002A70F1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A3VZR3SRTH;
-				INFOPLIST_FILE = Nook/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.enriquepajuelo.Nook;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		6A2202F71DC57944002A70F1 /* Build configuration list for PBXProject "Nook" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6A22030C1DC57945002A70F1 /* Debug */,
-				6A22030D1DC57945002A70F1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6A22030E1DC57945002A70F1 /* Build configuration list for PBXNativeTarget "Nook" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6A22030F1DC57945002A70F1 /* Debug */,
-				6A2203101DC57945002A70F1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 6A2202F41DC57944002A70F1 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>1D0C5CBA8572C562FF64A365</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>&#128230; Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Nook/Pods-Nook-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>26D2025A15DB5C3C024000A2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D3189E7CF162EBE23E38FE9E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2D0548CCE34568C9D785263B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E7CA31A2C51A54C75E969973</string>
+				<string>86BB1433087B9E064E5EACE4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5467A848BD8F719295DD4FB2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D3189E7CF162EBE23E38FE9E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6A2202F31DC57944002A70F1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6A2202FE1DC57945002A70F1</string>
+				<string>6A2202FD1DC57945002A70F1</string>
+				<string>2D0548CCE34568C9D785263B</string>
+				<string>26D2025A15DB5C3C024000A2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A2202F41DC57944002A70F1</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastSwiftUpdateCheck</key>
+				<string>0810</string>
+				<key>LastUpgradeCheck</key>
+				<string>0820</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Enrique Pajuelo</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>6A2202FB1DC57944002A70F1</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>8.1</string>
+						<key>DevelopmentTeam</key>
+						<string>A3VZR3SRTH</string>
+						<key>ProvisioningStyle</key>
+						<string>Automatic</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>6A2202F71DC57944002A70F1</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>6A2202F31DC57944002A70F1</string>
+			<key>productRefGroup</key>
+			<string>6A2202FD1DC57945002A70F1</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>6A2202FB1DC57944002A70F1</string>
+			</array>
+		</dict>
+		<key>6A2202F71DC57944002A70F1</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>6A22030C1DC57945002A70F1</string>
+				<string>6A22030D1DC57945002A70F1</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>6A2202F81DC57944002A70F1</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>6AAC5F101DED2571006F5BB1</string>
+				<string>6A2203021DC57945002A70F1</string>
+				<string>6A7AD74D1DD6D5F7001BFD1C</string>
+				<string>6AAC5F081DED213F006F5BB1</string>
+				<string>6AAC5F011DED1855006F5BB1</string>
+				<string>6AAC5F0A1DED2399006F5BB1</string>
+				<string>6A7AD7511DD7887C001BFD1C</string>
+				<string>6ABB32461DDECE5400A9309D</string>
+				<string>6AEDC0E41DF07FA6005D6EAD</string>
+				<string>6A2203001DC57945002A70F1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>6A2202F91DC57944002A70F1</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>5467A848BD8F719295DD4FB2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>6A2202FA1DC57944002A70F1</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>6A22030A1DC57945002A70F1</string>
+				<string>6AAC5F061DED1D7B006F5BB1</string>
+				<string>6A368E601E45307100A36382</string>
+				<string>6A2203071DC57945002A70F1</string>
+				<string>6A2203051DC57945002A70F1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>6A2202FB1DC57944002A70F1</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>6A22030E1DC57945002A70F1</string>
+			<key>buildPhases</key>
+			<array>
+				<string>DCF772F36FF6D4FFE7BBA9D8</string>
+				<string>6A2202F81DC57944002A70F1</string>
+				<string>6A2202F91DC57944002A70F1</string>
+				<string>6A2202FA1DC57944002A70F1</string>
+				<string>75FBCD32A46DC088FB2D710E</string>
+				<string>1D0C5CBA8572C562FF64A365</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Nook</string>
+			<key>productName</key>
+			<string>Nook</string>
+			<key>productReference</key>
+			<string>6A2202FC1DC57945002A70F1</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>6A2202FC1DC57945002A70F1</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Nook.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>6A2202FD1DC57945002A70F1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6A2202FC1DC57945002A70F1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A2202FE1DC57945002A70F1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6ABB324A1DDF9D7700A9309D</string>
+				<string>6AAC5F021DED191A006F5BB1</string>
+				<string>6ABB32491DDF9D6E00A9309D</string>
+				<string>6ABB32471DDF9D5900A9309D</string>
+				<string>6A2202FF1DC57945002A70F1</string>
+				<string>6A2203061DC57945002A70F1</string>
+				<string>6A2203081DC57945002A70F1</string>
+				<string>6A22030B1DC57945002A70F1</string>
+				<string>6ABB32451DDECE5400A9309D</string>
+				<string>6AAC5F091DED2399006F5BB1</string>
+				<string>6A368E5F1E45307100A36382</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Nook</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A2202FF1DC57945002A70F1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AppDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A2203001DC57945002A70F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6A2202FF1DC57945002A70F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6A2203011DC57945002A70F1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A2203021DC57945002A70F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6A2203011DC57945002A70F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6A2203031DC57945002A70F1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6A2203041DC57945002A70F1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A2203041DC57945002A70F1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A2203051DC57945002A70F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6A2203031DC57945002A70F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6A2203061DC57945002A70F1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Assets.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A2203071DC57945002A70F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6A2203061DC57945002A70F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6A2203081DC57945002A70F1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6A2203091DC57945002A70F1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A2203091DC57945002A70F1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A22030A1DC57945002A70F1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6A2203081DC57945002A70F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6A22030B1DC57945002A70F1</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A22030C1DC57945002A70F1</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INFINITE_RECURSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_SUSPICIOUS_MOVES</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>10.1</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SWIFT_ACTIVE_COMPILATION_CONDITIONS</key>
+				<string>DEBUG</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>6A22030D1DC57945002A70F1</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_DOCUMENTATION_COMMENTS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INFINITE_RECURSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_SUSPICIOUS_MOVES</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>10.1</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Owholemodule</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>6A22030E1DC57945002A70F1</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>6A22030F1DC57945002A70F1</string>
+				<string>6A2203101DC57945002A70F1</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>6A22030F1DC57945002A70F1</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E7CA31A2C51A54C75E969973</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>DEVELOPMENT_TEAM</key>
+				<string>A3VZR3SRTH</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Nook/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.enriquepajuelo.Nook</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>6A2203101DC57945002A70F1</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>86BB1433087B9E064E5EACE4</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>DEVELOPMENT_TEAM</key>
+				<string>A3VZR3SRTH</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Nook/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.enriquepajuelo.Nook</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>6A368E5F1E45307100A36382</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>GoogleService-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A368E601E45307100A36382</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6A368E5F1E45307100A36382</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6A7AD74C1DD6D5F7001BFD1C</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TableViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A7AD74D1DD6D5F7001BFD1C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6A7AD74C1DD6D5F7001BFD1C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6A7AD7501DD7887C001BFD1C</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Nook.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A7AD7511DD7887C001BFD1C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6A7AD7501DD7887C001BFD1C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6AAC5F001DED1855006F5BB1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>User.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6AAC5F011DED1855006F5BB1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6AAC5F001DED1855006F5BB1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6AAC5F021DED191A006F5BB1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6AAC5F0F1DED2571006F5BB1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Model Controller</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6AAC5F051DED1D7B006F5BB1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>path</key>
+			<string>Onboarding.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6AAC5F061DED1D7B006F5BB1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6AAC5F051DED1D7B006F5BB1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6AAC5F071DED213F006F5BB1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>RegisterViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6AAC5F081DED213F006F5BB1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6AAC5F071DED213F006F5BB1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6AAC5F091DED2399006F5BB1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>StringExtension.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6AAC5F0A1DED2399006F5BB1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6AAC5F091DED2399006F5BB1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6AAC5F0F1DED2571006F5BB1</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UserController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6AAC5F101DED2571006F5BB1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6AAC5F0F1DED2571006F5BB1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6ABB32451DDECE5400A9309D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ProgressArc.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6ABB32461DDECE5400A9309D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6ABB32451DDECE5400A9309D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6ABB32471DDF9D5900A9309D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6A2203011DC57945002A70F1</string>
+				<string>6A7AD74C1DD6D5F7001BFD1C</string>
+				<string>6AAC5F071DED213F006F5BB1</string>
+				<string>6AEDC0E31DF07FA6005D6EAD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ViewController</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6ABB32491DDF9D6E00A9309D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6A2203031DC57945002A70F1</string>
+				<string>6AAC5F051DED1D7B006F5BB1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6ABB324A1DDF9D7700A9309D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6A7AD7501DD7887C001BFD1C</string>
+				<string>6AAC5F001DED1855006F5BB1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Model</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6AEDC0E31DF07FA6005D6EAD</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LoginViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6AEDC0E41DF07FA6005D6EAD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6AEDC0E31DF07FA6005D6EAD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>75FBCD32A46DC088FB2D710E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>&#128230; Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Nook/Pods-Nook-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>86BB1433087B9E064E5EACE4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Nook.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Nook/Pods-Nook.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D3189E7CF162EBE23E38FE9E</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_Nook.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>DCF772F36FF6D4FFE7BBA9D8</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>&#128230; Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>E7CA31A2C51A54C75E969973</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Nook.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Nook/Pods-Nook.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>6A2202F41DC57944002A70F1</string>
+</dict>
+</plist>

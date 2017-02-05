@@ -135,6 +135,7 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
 //            mapview.selectAnnotation(entry3, animated: true)
 //            tableView.deselectRow(at: indexPath, animated: true)
         }
+        
         self.performSegue(withIdentifier: "showView", sender: self)
     }
     
@@ -147,7 +148,11 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
             add.backgroundColor = .orange
             return [add]
         } else if tableView == self.tableview {
-            let delete = UITableViewRowAction(style:.normal, title:"Delete") {action, index in
+            let delete = UITableViewRowAction(style:.normal, title:"Delete") {action, indexPath in
+                print(indexPath)
+                let row = indexPath[1]
+                let favoriteToRemove = NookViewController.sharedInstance.favoriteNooks.remove(at: row)
+                self.tableview.reloadData()
 //                tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
             }
             delete.backgroundColor = .red
