@@ -90,24 +90,24 @@ class NookViewController: UIViewController {
     var favoriteNooks = [NookController]()
     
     // Convert favorite nooks array to string
-    func arrayToString() -> String {
-        
-        var arrayOfStrings = [String]()
-        
-        for nook in favoriteNooks {
-            arrayOfStrings = arrayOfStrings + nook.title
-        }
-
-        let favoriteString = arrayOfStrings.joined(separator:"")
-        
-        return favoriteString
-    }
+//    func arrayToString() -> String {
+//        
+//        var arrayOfStrings = [String]()
+//        
+//        for nook in favoriteNooks {
+//            arrayOfStrings = arrayOfStrings + nook.title
+//        }
+//
+//        let favoriteString = arrayOfStrings.joined(separator:"")
+//        
+//        return favoriteString
+//    }
     
     // Convert favoriteString back to an array
-    func stringToArray() {
-        var newFavorites = [NookController]()
-        newFavorites = favoriteString.components(separatedBy:"")
-    }
+//    func stringToArray() {
+//        var newFavorites = [NookController]()
+//        newFavorites = favoriteString.components(separatedBy:"")
+//    }
     
     
 }
