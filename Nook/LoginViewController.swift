@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -24,6 +25,40 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: IBActions
     
     @IBAction func loginButtonPressed(_ sender: Any) {
+        FIRAuth.auth()?.signIn(withEmail: emailField.text!, password: passwordField.text!) { (user, error) in
+            if error == nil {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateInitialViewController()
+                let application = UIApplication.shared
+                let window = application.keyWindow
+                window?.rootViewController = viewController
+            } else {
+                if let errorCode = FIRAuthErrorCode(rawValue: error!._code) {
+                    switch errorCode {
+                    case .errorCodeUserNotFound:
+                        let errorAlert = UIAlertController(title: "Error", message: "User not found", preferredStyle: UIAlertControllerStyle.alert)
+                        let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .default)  { (action: UIAlertAction) in }
+                        errorAlert.addAction(dismissErrorAlert)
+                        self.present(errorAlert, animated: true, completion: nil)
+                    case .errorCodeWrongPassword:
+                        let errorAlert = UIAlertController(title: "Error", message: "Wrong password", preferredStyle: UIAlertControllerStyle.alert)
+                        let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .default)  { (action: UIAlertAction) in }
+                        errorAlert.addAction(dismissErrorAlert)
+                        self.present(errorAlert, animated: true, completion: nil)
+                    case .errorCodeNetworkError:
+                        let errorAlert = UIAlertController(title: "Error", message: "There was a network error", preferredStyle: UIAlertControllerStyle.alert)
+                        let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .default)  { (action: UIAlertAction) in }
+                        errorAlert.addAction(dismissErrorAlert)
+                        self.present(errorAlert, animated: true, completion: nil)
+                    default:
+                        let errorAlert = UIAlertController(title: "Error", message: "Sorry! There was an error login in", preferredStyle: UIAlertControllerStyle.alert)
+                        let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .default)  { (action: UIAlertAction) in }
+                        errorAlert.addAction(dismissErrorAlert)
+                        self.present(errorAlert, animated: true, completion: nil)
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func registerButtonPressed(_ sender: Any) {

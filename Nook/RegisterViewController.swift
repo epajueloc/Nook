@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
     
@@ -27,32 +28,25 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     // MARK: IBActions
     @IBAction func registerButtonTapped(_ sender: Any) {
         
-        let onCompletion = {(user: User?, message:String?) in
-            
-            
-            // Show error mesage saying user is not valid
-            if user == nil {
-                let errorAlert = UIAlertController(title: "Error", message: "User is not valid", preferredStyle: UIAlertControllerStyle.alert)
-                let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .default)  { (action: UIAlertAction) in }
-                errorAlert.addAction(dismissErrorAlert)
-                self.present(errorAlert, animated: true, completion: nil)
-            }
-            else if self.emailField.text!.isValidEmail() == false {
-                let errorAlert = UIAlertController(title: "Error", message: "Email is not valid", preferredStyle: UIAlertControllerStyle.alert)
-                let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in })
-                errorAlert.addAction(dismissErrorAlert)
-                self.present(errorAlert, animated: true, completion: nil)
-            }
-            else if self.passwordField.text!.characters.count < 6 {
-                let errorAlert = UIAlertController(title: "Error", message: "Password must be at least six characters long", preferredStyle: UIAlertControllerStyle.alert)
-                let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in })
-                errorAlert.addAction(dismissErrorAlert)
-                self.present(errorAlert, animated: true, completion: nil)
-            }
-            else {
-                let viewController = UIStoryboard(name:"Main",bundle:nil).instantiateInitialViewController()
-                let window = UIApplication.shared.keyWindow
+        
+        FIRAuth.auth()?.createUser(withEmail: emailField.text!, password: passwordField.text!) { (user, error) in
+            if error == nil {
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateInitialViewController()
+                let application = UIApplication.shared
+                let window = application.keyWindow
                 window?.rootViewController = viewController
+                
+                let ref: FIRDatabaseReference = FIRDatabase.database().reference()
+                
+                if self.firstNameField.text != nil {
+                    ref.child("users").child((user?.uid)!).child("firstName").setValue(self.firstNameField.text)
+                }
+                
+                if self.lastNameField.text != nil {
+                    ref.child("users").child((user?.uid)!).child("lastName").setValue(self.lastNameField.text)
+                }
                 
                 // Dismissing keyboard - returning view to normal bounds
                 self.dismissKeyboard()
@@ -60,11 +54,34 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                 self.textFieldDidEndEditing(self.lastNameField)
                 self.textFieldDidEndEditing(self.emailField)
                 self.textFieldDidEndEditing(self.passwordField)
+                
+            } else {
+                if let errorCode = FIRAuthErrorCode(rawValue: error!._code) {
+                    switch errorCode {
+                    case .errorCodeInvalidEmail:
+                        let errorAlert = UIAlertController(title: "Error", message: "Email is not valid", preferredStyle: UIAlertControllerStyle.alert)
+                        let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .default)  { (action: UIAlertAction) in }
+                        errorAlert.addAction(dismissErrorAlert)
+                        self.present(errorAlert, animated: true, completion: nil)
+                    case .errorCodeWeakPassword:
+                        let errorAlert = UIAlertController(title: "Error", message: "Password is too weak", preferredStyle: UIAlertControllerStyle.alert)
+                        let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .default)  { (action: UIAlertAction) in }
+                        errorAlert.addAction(dismissErrorAlert)
+                        self.present(errorAlert, animated: true, completion: nil)
+                    case .errorCodeEmailAlreadyInUse:
+                        let errorAlert = UIAlertController(title: "Error", message: "Email is already in use", preferredStyle: UIAlertControllerStyle.alert)
+                        let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .default)  { (action: UIAlertAction) in }
+                        errorAlert.addAction(dismissErrorAlert)
+                        self.present(errorAlert, animated: true, completion: nil)
+                    default:
+                        let errorAlert = UIAlertController(title: "Error", message: "The email or the password are invalid", preferredStyle: UIAlertControllerStyle.alert)
+                        let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .default)  { (action: UIAlertAction) in }
+                        errorAlert.addAction(dismissErrorAlert)
+                        self.present(errorAlert, animated: true, completion: nil)
+                    }
+                }
             }
         }
-        
-        UserController.sharedInstance.emailRegister(firstNameField.text!, lastName: lastNameField.text!, email: emailField.text!, password: passwordField.text!, onCompletion: onCompletion)
-        
     }
 
     @IBAction func firstNameFieldReturned(_ sender: UITextField) {

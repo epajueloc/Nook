@@ -48,7 +48,6 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
             tableview3.isHidden = true
             mapview.isHidden = true
         case 2:
-        //If we don't use tableview3, get rid of it
             tableview.isHidden = true
             tableview2.isHidden = true
             tableview3.isHidden = false
@@ -129,31 +128,17 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
             idToPass = entry3.id
             coordinateToPass = entry3.coordinate
             distanceToPass = entry3.distance
-            
-            // When a row is tapped, pan the map to its matching annotation.
-//            mapview.setCenter(entry3.coordinate, animated: true)
-//            mapview.selectAnnotation(entry3, animated: true)
-//            tableView.deselectRow(at: indexPath, animated: true)
         }
         
         self.performSegue(withIdentifier: "showView", sender: self)
     }
     
-    // DELETE IF I don't use it
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
-        if tableView == self.tableview2 {
-            let add = UITableViewRowAction(style:.normal, title:"Add") {action, index in
-            }
-            add.backgroundColor = .orange
-            return [add]
-        } else if tableView == self.tableview {
+        if tableView == self.tableview {
             let delete = UITableViewRowAction(style:.normal, title:"Delete") {action, indexPath in
-                print(indexPath)
                 let row = indexPath[1]
-                let favoriteToRemove = NookViewController.sharedInstance.favoriteNooks.remove(at: row)
+                NookViewController.sharedInstance.favoriteNooks.remove(at: row)
                 self.tableview.reloadData()
-//                tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
             }
             delete.backgroundColor = .red
             return [delete]
@@ -174,8 +159,10 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if (status == .denied) {
-            // Change message to alert saying you can change it in settings
-            print("Authorization denied")
+            let errorAlert = UIAlertController(title: "Authorization Denied", message: "You can change location preferenecs in Settings", preferredStyle: UIAlertControllerStyle.alert)
+            let dismissErrorAlert = UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in })
+            errorAlert.addAction(dismissErrorAlert)
+            self.present(errorAlert, animated: true, completion: nil)
         } else {
             authorized = true
         }
@@ -210,29 +197,6 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
     
     // MARK: Other functions
     
-    
-    // Not being used right now - DELETE
-    func addToFavorites() {
-        NookViewController.sharedInstance.favoriteNooks.append(NookController(title:titleToPass,coordinate:CLLocationCoordinate2D(),availability:availabilityToPass,hours:hoursToPass, id:idToPass, distance:distanceToPass))
-    }
-    
-    
-    // Not being used right now - DELETE
-    func checkDuplicates(_ title:String, coordinate:CLLocationCoordinate2D, availability:NookAvailability, hours:String, id:Int, distance:Double) -> Bool {
-        
-        currentNook = NookController(title:title, coordinate:coordinate, availability:availability, hours:hoursToPass, id:id, distance:distance)
-        
-        var duplicateBool = false
-        for nook in NookViewController.sharedInstance.favoriteNooks {
-            if nook.id == id {
-                duplicateBool = true
-            } else {
-                duplicateBool = false
-            }
-        }
-        return duplicateBool
-    }
-    
     func calculateDistance() {
         // Set current user's location
         let currentLocation = locationManager.location
@@ -248,10 +212,14 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
         NookViewController.sharedInstance.nooks.sort {
             $0.distance < $1.distance
         }
+        
     }
     
     func sortAlphabetically() {
         NookViewController.sharedInstance.nooks.sort {
+            $0.title! < $1.title!
+        }
+        NookViewController.sharedInstance.favoriteNooks.sort {
             $0.title! < $1.title!
         }
     }

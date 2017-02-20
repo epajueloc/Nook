@@ -114,15 +114,7 @@ class ViewController: UIViewController {
     
     func addToFavorites() {
         NookViewController.sharedInstance.favoriteNooks.append(NookController(title:titlePassed,coordinate:CLLocationCoordinate2D(),availability:availabilityPassed,hours:hoursPassed, id:idPassed, distance:distancePassed))
-        
-        //let ref: FIRDatabaseReference = FIRDatabase.database().reference()
-        //ref.child("favorites").child(titlePassed).setValue(true)
-        
-        // Persistence is not letting the function run
-//        let defaults = UserDefaults.standard
-//        defaults.set(NookViewController.sharedInstance.favoriteNooks, forKey: "SavedArray")
-//        defaults.synchronize()
-        
+        NookViewController.sharedInstance.saveToDevice()
     }
     
     func removeFromFavorites(_ title:String, coordinate:CLLocationCoordinate2D, availability:NookAvailability, hours:String, id:Int) {
@@ -136,16 +128,6 @@ class ViewController: UIViewController {
             }
         }
         NookViewController.sharedInstance.favoriteNooks = new_nooks
-        
-        // Is this right? Nope - should not be set
-//        let defaults = UserDefaults.standard
-//        defaults.set(titlePassed, forKey: "title")
-//        defaults.set(coordinatePassed.latitude, forKey: "latitude")
-//        defaults.set(coordinatePassed.longitude, forKey: "longitude")
-//        defaults.set(availabilityPassed, forKey: "availability")
-//        defaults.set(hoursPassed, forKey: "hours")
-//        defaults.set(idPassed, forKey: "id")
-//        defaults.synchronize()
         
     }
     
@@ -167,16 +149,6 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
         
-        // Set availability to display based on NSUserDefault value
-        /*
-        let defaults = UserDefaults.standard
-        let availabilityString: String? = defaults.string(forKey: "\(titlePassed):availability")
-        if let availabilitySet = availabilityString {
-            availabilityPassed = NookAvailability(rawValue: availabilitySet)
-        } else {
-            print("No availibility found")
-        }
-        */
         // Set availability to display based on Firebase value
         let ref: FIRDatabaseReference = FIRDatabase.database().reference()
         ref.child("availability")

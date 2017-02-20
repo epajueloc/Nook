@@ -8,5 +8,6 @@ target 'Nook' do
   # Pods for Nook
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
 
 end
