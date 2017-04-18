@@ -212,7 +212,6 @@ class TableViewController: UIViewController, MKMapViewDelegate, UITableViewDeleg
         NookViewController.sharedInstance.nooks.sort {
             $0.distance < $1.distance
         }
-        
     }
     
     func sortAlphabetically() {

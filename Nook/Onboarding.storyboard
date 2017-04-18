@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fZN-bA-xNX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fZN-bA-xNX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -234,10 +234,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="G04-ef-CYc" firstAttribute="centerX" secondItem="wpZ-RA-CRg" secondAttribute="centerX" id="5nM-q7-GIT"/>
-                            <constraint firstItem="smc-ke-YTB" firstAttribute="top" secondItem="LwB-2L-ECA" secondAttribute="bottom" constant="250" id="8qm-YG-VYy"/>
                             <constraint firstItem="smc-ke-YTB" firstAttribute="centerX" secondItem="wpZ-RA-CRg" secondAttribute="centerX" id="9ot-R8-vKg"/>
                             <constraint firstItem="eys-Hi-aVx" firstAttribute="centerX" secondItem="wpZ-RA-CRg" secondAttribute="centerX" id="Afg-TT-sKo"/>
                             <constraint firstItem="smc-ke-YTB" firstAttribute="width" secondItem="wpZ-RA-CRg" secondAttribute="width" multiplier="0.8" id="Dg8-JI-18T"/>
+                            <constraint firstItem="smc-ke-YTB" firstAttribute="top" secondItem="LwB-2L-ECA" secondAttribute="bottom" constant="250" id="E2z-3p-Kly"/>
                             <constraint firstItem="PKA-Pp-cIf" firstAttribute="top" secondItem="G04-ef-CYc" secondAttribute="bottom" constant="15" id="Num-M7-k9X"/>
                             <constraint firstItem="G04-ef-CYc" firstAttribute="width" secondItem="wpZ-RA-CRg" secondAttribute="width" multiplier="0.8" id="Sd6-Ap-jMw"/>
                             <constraint firstItem="G04-ef-CYc" firstAttribute="top" secondItem="eys-Hi-aVx" secondAttribute="bottom" constant="30" id="V2h-3F-tsW"/>
