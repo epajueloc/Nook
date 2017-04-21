@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -224,11 +225,17 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NookFinder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXT-Lj-gHb">
-                                <rect key="frame" x="66" y="190" width="244" height="39"/>
+                                <rect key="frame" x="66" y="230.5" width="244" height="39"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="39"/>
                                 <color key="textColor" red="0.011764705882352941" green="0.17254901960784313" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nook" translatesAutoresizingMaskIntoConstraints="NO" id="O5F-yi-mzO" userLabel="Logo">
+                                <rect key="frame" x="112" y="72" width="151" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="O5F-yi-mzO" secondAttribute="height" multiplier="1:1" id="Qwx-28-SwM"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -238,6 +245,8 @@
                             <constraint firstItem="smc-ke-YTB" firstAttribute="width" secondItem="wpZ-RA-CRg" secondAttribute="width" multiplier="0.8" id="Dg8-JI-18T"/>
                             <constraint firstItem="smc-ke-YTB" firstAttribute="top" secondItem="LwB-2L-ECA" secondAttribute="bottom" constant="250" id="E2z-3p-Kly"/>
                             <constraint firstItem="PKA-Pp-cIf" firstAttribute="top" secondItem="G04-ef-CYc" secondAttribute="bottom" constant="15" id="Num-M7-k9X"/>
+                            <constraint firstItem="dXT-Lj-gHb" firstAttribute="top" secondItem="O5F-yi-mzO" secondAttribute="bottom" constant="7.5" id="OHt-ge-Pdi"/>
+                            <constraint firstItem="O5F-yi-mzO" firstAttribute="centerX" secondItem="wpZ-RA-CRg" secondAttribute="centerX" id="Ppd-Uj-3RJ"/>
                             <constraint firstItem="dXT-Lj-gHb" firstAttribute="centerX" secondItem="wpZ-RA-CRg" secondAttribute="centerX" id="S6n-oM-mck"/>
                             <constraint firstItem="G04-ef-CYc" firstAttribute="width" secondItem="wpZ-RA-CRg" secondAttribute="width" multiplier="0.8" id="Sd6-Ap-jMw"/>
                             <constraint firstItem="G04-ef-CYc" firstAttribute="top" secondItem="eys-Hi-aVx" secondAttribute="bottom" constant="30" id="V2h-3F-tsW"/>
@@ -245,8 +254,9 @@
                             <constraint firstItem="eys-Hi-aVx" firstAttribute="top" secondItem="smc-ke-YTB" secondAttribute="bottom" constant="20" id="YQ4-xx-aiu"/>
                             <constraint firstItem="PKA-Pp-cIf" firstAttribute="width" secondItem="wpZ-RA-CRg" secondAttribute="width" multiplier="0.8" id="eLZ-BI-IxP"/>
                             <constraint firstItem="bs8-5w-qkq" firstAttribute="top" secondItem="PKA-Pp-cIf" secondAttribute="bottom" constant="15" id="euz-2S-FT9"/>
-                            <constraint firstItem="dXT-Lj-gHb" firstAttribute="centerY" secondItem="wpZ-RA-CRg" secondAttribute="centerY" multiplier="0.63" id="lk6-gJ-fqw"/>
+                            <constraint firstItem="dXT-Lj-gHb" firstAttribute="centerY" secondItem="wpZ-RA-CRg" secondAttribute="centerY" multiplier="0.75" id="lk6-gJ-fqw"/>
                             <constraint firstItem="PKA-Pp-cIf" firstAttribute="centerX" secondItem="wpZ-RA-CRg" secondAttribute="centerX" id="psI-Ea-CqD"/>
+                            <constraint firstItem="O5F-yi-mzO" firstAttribute="height" secondItem="wpZ-RA-CRg" secondAttribute="height" multiplier="0.225" id="sXG-gg-A3f"/>
                             <constraint firstItem="eys-Hi-aVx" firstAttribute="width" secondItem="wpZ-RA-CRg" secondAttribute="width" multiplier="0.8" id="wN1-ab-NOb"/>
                         </constraints>
                     </view>
@@ -264,4 +274,7 @@
             <point key="canvasLocation" x="221.59999999999999" y="-89.505247376311857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Nook" width="364" height="364"/>
+    </resources>
 </document>
